@@ -1,0 +1,288 @@
+/* NOTE: import font google */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+html {
+  position: relative;
+  font-size: 1vw;
+  scrollbar-gutter: stable;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 4.267vw;
+    scrollbar-gutter: auto;
+  }
+}
+
+html::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  /* NOTE: custom color */
+  background-color: #f9a31a;
+  border-radius: 0.5rem;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  /* NOTE: custom font */
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+  overflow-x: clip;
+}
+
+a {
+  display: block;
+}
+
+.section-bg-img,
+.section-bg,
+.section-deco {
+  pointer-events: none;
+  user-select: none;
+}
+
+.swiper-slide,
+.swiper-slide img {
+  user-select: none;
+}
+
+img {
+  object-fit: cover;
+}
+
+/* NOTE: CUSTOM CODE */
+/* NOTE: DO NOT SET width: 100%; height: 100%; object-fit: cover; FOR LOGO. NEED TO USE SPECIFICALLY NUMBER LIKE: width: 4rem; height: auto; object-fit: cover;  */
+
+:root {
+  --ease-kKao4: cubic-bezier(0.25, 0.74, 0.22, 0.99);
+}
+
+.primary-btn {
+  display: flex;
+  height: 2.5rem;
+  padding: 0.625rem 1.5rem 0.625rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0rem 1rem;
+  border: 1px solid var(--greyscaletext-20, #a9a9a9);
+  margin: auto;
+  transition: all 0.6s var(--ease-kKao4);
+  position: relative;
+  overflow: hidden;
+  height: 2.5rem;
+}
+
+.primary-btn p {
+  color: var(--greyscaletext-80, #262626);
+  font-family: "Inter";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  transition: all 0.6s var(--ease-kKao4);
+}
+
+.primary-btn svg,
+.primary-btn img {
+  margin-right: 0.5rem;
+  width: 0.4375rem;
+  height: 0.5625rem;
+  position: relative;
+  z-index: 1;
+  transition: all 0.6s var(--ease-kKao4);
+}
+
+.primary-btn svg path {
+  transition: all 0.6s var(--ease-kKao4);
+}
+
+.primary-btn .overlay-btn {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  background: var(
+    --fill-button-yellow,
+    linear-gradient(236deg, #fff -10.38%, #fbab2b 31.88%, #f9a31a 100.4%, #f9a31a 103.83%)
+  );
+  opacity: 0;
+  transition: all 0.6s var(--ease-kKao4);
+}
+
+.primary-btn:hover {
+  border-color: transparent;
+}
+
+.primary-btn:hover .overlay-btn {
+  opacity: 1;
+}
+
+.primary-btn:hover p {
+  color: #fff;
+}
+
+.primary-btn:hover svg path {
+  fill: #fff;
+}
+
+.primary-btn.active {
+  border-color: transparent;
+}
+
+.primary-btn.active p {
+  color: #fff;
+}
+
+.primary-btn.active svg path {
+  fill: #fff;
+}
+
+.primary-btn.active .overlay-btn {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .primary-btn {
+    border-color: transparent;
+  }
+
+  .primary-btn p {
+    color: #fff;
+  }
+
+  .primary-btn svg path {
+    fill: #fff;
+  }
+
+  .primary-btn .overlay-btn {
+    opacity: 1;
+  }
+}
+
+.noti-container {
+  position: fixed;
+  bottom: 0;
+  left: 2rem;
+  width: 24rem;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  border: 1px solid hsl(0, 0%, 93%);
+  padding: 1rem;
+  z-index: 10000;
+  box-shadow: 0 4px 12px #0000001a;
+  transform: translate(0, 100%);
+  transition: all 0.8s var(--ease-kKao4);
+}
+
+.noti-container strong {
+  color: black;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.noti-container > button {
+  width: 0.875rem;
+  height: 0.875rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noti-container > button > svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .noti-container {
+    width: 92%;
+    bottom: 0;
+	left: auto;
+    right: 50%;
+    transform: translate(50%, 100%);
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@media (max-width: 768px) {
+	main{
+		margin-top: 3.1rem;
+	}
+}
+
+.scrollbar-container {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  height: 99%;
+  width: 0.45rem;
+  background-color: transparent;
+  z-index: 10000;
+}
+
+.scrollbar-container .scrollbar-thumb-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.6rem;
+  overflow: visible;
+  visibility: hidden;
+  cursor: grab;
+  z-index: 1;
+}
+
+.scrollbar-container .scrollbar-thumb {
+  width: 0.45rem;
+  height: 100%;
+  margin-right: auto;
+  border-radius: 0.65rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  user-select: none;
+}
+
+.slide-in-text {
+	visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .scrollbar-container {
+    display: none;
+  }
+	
+.slide-in-text {
+	visibility: visible;
+}
+}
+
