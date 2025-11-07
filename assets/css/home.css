@@ -1,0 +1,287 @@
+/* Header  */
+
+.header {
+  width: 1920px;
+  height: 45px;
+  flex-shrink: 0;
+  background: #13AE5B;
+  font-family: "Inter", sans-serif;
+}
+
+/* Phần chứa liên hệ */
+.header__top .header__contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 34.24px; 
+}
+
+/* Phone */
+.header__phone {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* tạo khoảng cách giữa icon và text */
+}
+
+.header__phone svg {
+  width: 20px;
+  height: 19px;
+  flex-shrink: 0;
+  fill: #FFF;
+  margin-left: 277px; /* nếu trong figma icon bị đẩy qua phải */
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+
+.header__phone p {
+  color: #FFF;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 12px;
+  margin-bottom: 9px;
+  /* bỏ margin-right cực lớn vì sẽ phá flex layout */
+}
+
+/* Email */
+.header__email {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  gap: 10px;
+}
+
+.header__email svg {
+  width: 27px;
+  height: 16px;
+  flex-shrink: 0;
+  fill: #FFF;
+  margin-top: 16px;
+  margin-bottom: 13px;
+  margin-left: 34.24px;
+}
+
+.header__email p {
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 12px;
+    margin-right: 1092px;
+    margin-bottom: 9px;
+}
+
+
+.header__nav-inner {
+    display: flex;
+}
+
+.header__logo {
+    display: flex;
+}
+
+.header__logo svg {
+    width: 49.61px;
+    height: 65.6px;
+    flex-shrink: 0;
+    margin-top: 21px;
+    margin-right: 16.39px;
+    margin-left: 270px;
+    margin-bottom: 27px;
+}   
+
+.header__logo-text .header__company-name{
+    color: #14AE5C;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.header__menu {
+    display: flex;
+    list-style: none;
+    margin-top: 43px;
+    margin-left: 47px;
+    margin-bottom: 27px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu__item {
+    display: flex;
+    flex-shrink: 0;
+    border: 0.5px solid rgba(48, 48, 48, 0.50);
+    background: #F5F5F5;
+}
+
+.menu__item p {
+    color: #303030;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 10px;
+    margin-left: 17px;
+    margin-bottom: 10px;
+}
+
+.menu__item svg {
+    width: 8px;
+    height: 4px;
+    flex-shrink: 0;
+    stroke-width: 1.5px;
+    stroke: #303030; 
+    margin-left: 7px;
+    margin-top: 17px;
+    margin-right: 17px;
+}
+
+.menu__item--active {
+    flex-shrink: 0;
+    border: 0.5px solid rgba(48, 48, 48, 0.50);
+    background: #13AE5B;
+}
+
+.menu__item--active p {
+    color: #F5F5F5;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.menu__item--active svg {
+    margin-top: 17px;
+    margin-right: 12px;
+    margin-left: 10px;
+    margin-bottom: 17px;
+    width: 8px;
+    height: 4px;
+    flex-shrink: 0;
+    stroke-width: 1.5px;
+    stroke: #F5F5F5;
+}
+
+.header__actions {
+    display: flex;
+}
+
+.header__actions svg {
+    width: 17.64px;
+    height: 17.77px;
+    flex-shrink: 0;
+    margin-left: 105px;
+    margin-top: 53px;
+    margin-bottom: 37.23px;
+}
+
+.header__actions .header__lang {
+    color: #13AE5B;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 53px;
+    margin-left: 7.36px;
+    margin-right: 7.38px;
+}
+
+
+/* End Header */
+
+
+/* Body */
+
+/* 2 ảnh đầu  */
+.home-content__image3{
+    width: 1920px;
+    height: 719px;
+    flex-shrink: 0;
+    aspect-ratio: 1920/719;
+    background: url("../images/image3.png") lightgray -2.652px 0px / 100.414% 100.184% no-repeat;
+    margin-top: 108px;
+}
+
+.home-content__anh01 {
+    width: 1477px;
+    height: 333px;
+    flex-shrink: 0;
+    aspect-ratio: 1477/333;
+    background: url("../images/anh-01\ 1.jpg") lightgray 50% / cover no-repeat;
+    margin-top: 0;
+    margin-left: 222px;
+}
+
+.rectangle9 {
+    position: relative;
+    width: 1699px;
+    height: 20px;
+    flex-shrink: 0;
+    background: #95CC44;
+    z-index: -1;
+}
+
+.rectangle10 {
+    position: relative;
+    width: 708px;
+    height: 30px;
+    flex-shrink: 0;
+    background: #009950;
+    margin-top: -20px;
+    margin-left: 1131px;
+}
+/* End 2 ảnh đầu  */
+
+
+/* Giới thiệu 1 */
+
+.about__heading {
+    color: #14AE5C;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 463px;
+    margin-top: 42px;
+    margin-bottom: 41px
+}
+
+.about__column {
+    
+}
+
+.about__column .about__column-title {
+    color: #14AE5C;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* End Giới thiệu 1 */
+
+
+/* End Body */
