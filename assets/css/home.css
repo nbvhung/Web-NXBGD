@@ -268,8 +268,48 @@
     margin-bottom: 41px
 }
 
+.about__grid {
+    display: flex;
+}
+
+.about__grid .about__grid-1 {
+    margin-left: 330px;
+}
+
+.about__grid .about__grid-2 {
+    margin-left: 34px;
+}
+
+.about__grid .about__grid-2 .about__column .about__column-list{
+    list-style-type: disc;
+    margin-left: 27px;
+    width: 597px;
+    height: 239px;
+    flex-shrink: 0;
+    color: #303030;
+    text-align: justify;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 130% */
+    margin-top: 16px;
+}
+
+.about__grid-2 .about__column .about__column-list li {
+    margin-bottom: 25px;
+}
+
+.about__grid-2 .about__column .about__column-list li:last-child {
+    margin-bottom: 0;
+}
+
 .about__column {
-    
+    margin-bottom: 31px;
+}
+
+.about__grid-1 .about__column-list li:last-child {
+    margin-bottom: 0;
 }
 
 .about__column .about__column-title {
@@ -281,7 +321,101 @@
     line-height: normal;
 }
 
+.about__grid .about__grid-1 .about__column .about__column-list {
+    width: 597px;
+    height: 49px;
+    flex-shrink: 0;
+    color: #303030;
+    text-align: justify;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 130% */
+    margin-top: 16px;
+}
+
+.about__cta {
+    width: 180px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 25px;
+    background: #02542D;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 330px;
+    margin-top: -25px;
+}
 /* End Giới thiệu 1 */
 
 
 /* End Body */
+
+
+/* Footer */
+.footer {
+    width: 1920px;
+    height: 156px;
+    flex-shrink: 0;
+    background: #95CC44;
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__logo {
+    display: flex;
+}
+
+.footer__logo svg {
+    width: 49.61px;
+    height: 65.6px;
+    flex-shrink: 0;
+    margin-top: 49px;
+    margin-bottom: 41.4px;
+    margin-left: 270px;
+}
+
+.footer__logo .footer__logo-text {
+    width: 446px;
+    height: 58px;
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 16.39px;
+    margin-top: 53px;
+    margin-bottom: 45px;
+    white-space: nowrap;
+}
+
+.footer__info {
+    width: 806px;
+    height: 83px;
+    flex-shrink: 0;
+    color: #303030;
+    text-align: justify;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 160% */
+    margin-left: 151px;
+    margin-top: 34px;
+    margin-bottom: 39px;
+    margin-right: 181px;
+    white-space: nowrap;
+}
+/* End Footer */
