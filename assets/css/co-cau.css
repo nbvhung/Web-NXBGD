@@ -1,0 +1,139 @@
+/* --- Cài đặt chung --- */
+body {
+    font-family: 'Inter', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- 3. Breadcrumb --- */
+.breadcrumb-bar {
+    position: relative;
+    margin-top: 15px; 
+    padding: 2.2px 15px; 
+    font-size: 15px; 
+    color: #ffffff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2; 
+}
+.breadcrumb-bar .icon {
+    fill: white;
+    width: 26px;
+    height: 26px;
+}
+.breadcrumb-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; 
+    width: 68%;
+    background-color: #95CC44;
+    z-index: -1; 
+}
+.breadcrumb-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 50%; 
+    width: 100%; 
+    background-color: #009950;
+    z-index: -2; 
+    top: 50%;
+}
+
+/* --- 4. Main Content --- */
+.main-content {
+    padding-bottom: 30px;
+}
+.main-content > .container:first-of-type {
+    padding-top: 15px; 
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px; 
+    align-items: stretch;
+}
+.content-left {
+    flex: 2.6;
+}
+.page-title {
+    color: #009950;
+    font-size: 24px;
+}
+.page-date {
+    font-size: 12px;
+    color: #777;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Sidebar */
+.sidebar-right {
+    flex: 1.12;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-widget {
+    margin-bottom: 15px; 
+}
+
+/* Placeholder và ảnh */
+.placeholder-image {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+.placeholder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block; 
+}
+.main-chart-placeholder {
+    width: 100%; 
+    height: 100%; 
+    border: 1px dashed #ccc;
+    background-color: #eee;
+}
+.placeholder-image.ad-1 {
+    height: 140px; 
+    border: 1px dashed #ccc;
+    background-color: #eee;
+}
+.sidebar-widget.image-with-button-widget {
+    position: relative;
+    flex-grow: 1; 
+}
+.placeholder-image.group-photo {
+    height: 100%; 
+    border: 1px dashed #ccc;
+    background-color: #eee;
+}
+
+.view-more-btn {
+    background-color: #008a4c;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto; 
+    position: absolute;
+    bottom: 15px; 
+    right: 15px; 
+    border-radius: 25px;
+    padding: 10px 20px; 
+    font-size: 14px;
+    z-index: 2; 
+}
