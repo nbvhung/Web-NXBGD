@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Title</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <link rel="stylesheet" href="./assets/css/root.css" />
   <link rel="stylesheet" href="./assets/css/reset.css" />
@@ -44,7 +45,7 @@
     <!-- Navigation bar -->
     <div class="header__nav">
       <div class="container header__nav-inner">
-        <div class="header__logo">
+        <a class="header__logo" href="index.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="66" viewBox="0 0 50 66" fill="none">
             <g clip-path="url(#clip0_1_2299)">
               <path
@@ -71,67 +72,140 @@
               CÔNG TY CỔ PHẦN <br> DỊCH VỤ XUẤT BẢN GIÁO DỤC HÀ NỘI
             </h1>
           </div>
-        </div>
+        </a>
 
         <nav class="header__menu">
           <ul class="menu">
             <li class="menu__item menu__item--active">
-              <p>Trang chủ</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#F5F5F5" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
+              <a href="index.html" class="menu__link">
+                <p>Trang chủ</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </a>
+            </li>
+            <li class="menu__item menu__item--has-dropdown">
+              <a href="/" class="menu__link">
+                <p>Giới thiệu</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </a>
+              <ul class="submenu">
+                <li class="submenu__item">
+                  <a href="/san-pham/sach-giao-khoa.html">Sách giáo khoa</a>
+                </li>
+                <li class="submenu__item">
+                  <a href="/san-pham/sach-tham-khao.html">Sách tham khảo</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu__item menu__item--has-dropdown">
+              <a href="/" class="menu__link">
+                <p>Sản phẩm</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </a>
+              <ul class="submenu">
+                <li class="submenu__item">
+                  <a href="/san-pham/sach-giao-khoa.html">Sách giáo khoa</a>
+                </li>
+                <li class="submenu__item">
+                  <a href="/san-pham/sach-tham-khao.html">Sách tham khảo</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu__item menu__item--has-dropdown">
+              <a href="/" class="menu__link">
+                <p>Góc cổ đông</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </a>
+              <ul class="submenu">
+                <li class="submenu__item menu__item--has-dropdown">
+                  <a href="/san-pham/sach-giao-khoa.html">Sách giáo khoa</a>
+                </li>
+                <li class="submenu__item">
+                  <a href="/san-pham/sach-tham-khao.html">Sách tham khảo</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu__item menu__item--has-dropdown">
+              <a href="/" class="menu__link">
+                <p>Tin tức</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </a>
+              <ul class="submenu">
+                <li class="submenu__item">
+                  <a href="/san-pham/sach-giao-khoa.html">Sách giáo khoa</a>
+                </li>
+                <li class="submenu__item">
+                  <a href="/san-pham/sach-tham-khao.html">Sách tham khảo</a>
+                </li>
+              </ul>
             </li>
             <li class="menu__item">
-              <p>Giới thiệu </p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-            </li>
-            <li class="menu__item">
-              <p>Sản phẩm</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-            </li>
-            <li class="menu__item">
-              <p>Góc cổ đông</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-            </li>
-            <li class="menu__item">
-              <p>Tin tức</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-            </li>
-            <li class="menu__item">
-              <p>Liên hệ</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
-                <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
+              <a href="/" class="menu__link">
+                <p>Liên hệ</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                  <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#303030" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </a>
             </li>
           </ul>
         </nav>
 
         <div class="header__actions">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <g clip-path="url(#clip0_1_2318)">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M7.5 13C8.96 13 10.36 12.42 11.39 11.39C12.42 10.36 13 8.96 13 7.5C13 6.04 12.42 4.64 11.39 3.61C10.36 2.58 8.96 2 7.5 2C6.04 2 4.64 2.58 3.61 3.61C2.58 4.64 2 6.04 2 7.5C2 8.96 2.58 10.36 3.61 11.39C4.64 12.42 6.04 13 7.5 13ZM13.44 12.08L17.38 16.09C17.56 16.28 17.65 16.53 17.65 16.79C17.65 17.05 17.54 17.3 17.35 17.48C17.16 17.66 16.92 17.77 16.66 17.77C16.4 17.77 16.15 17.67 15.96 17.49L12.02 13.48C10.5 14.62 8.6 15.15 6.71 14.95C4.82 14.75 3.07 13.83 1.83 12.4C0.590002 10.97 -0.059998 9.1 0.010002 7.2C0.090002 5.3 0.880002 3.5 2.23 2.16C3.58 0.829997 5.39 0.0599973 7.29 -2.72947e-06C9.19 -0.0600027 11.04 0.619997 12.47 1.88C13.9 3.14 14.79 4.9 14.97 6.79C15.15 8.69 14.6 10.58 13.44 12.08Z"
-                fill="#14AE5C" />
-            </g>
-            <defs>
-              <clipPath id="clip0_1_2318">
-                <rect width="17.64" height="17.77" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-          <span class="header__lang">VI</span>
+
+          <div class="header__search" id="search-container">
+            <button type="button" class="header__search-toggle" id="search-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <g clip-path="url(#clip0_1_2318)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.5 13C8.96 13 10.36 12.42 11.39 11.39C12.42 10.36 13 8.96 13 7.5C13 6.04 12.42 4.64 11.39 3.61C10.36 2.58 8.96 2 7.5 2C6.04 2 4.64 2.58 3.61 3.61C2.58 4.64 2 6.04 2 7.5C2 8.96 2.58 10.36 3.61 11.39C4.64 12.42 6.04 13 7.5 13ZM13.44 12.08L17.38 16.09C17.56 16.28 17.65 16.53 17.65 16.79C17.65 17.05 17.54 17.3 17.35 17.48C17.16 17.66 16.92 17.77 16.66 17.77C16.4 17.77 16.15 17.67 15.96 17.49L12.02 13.48C10.5 14.62 8.6 15.15 6.71 14.95C4.82 14.75 3.07 13.83 1.83 12.4C0.590002 10.97 -0.059998 9.1 0.010002 7.2C0.090002 5.3 0.880002 3.5 2.23 2.16C3.58 0.829997 5.39 0.0599973 7.29 -2.72947e-06C9.19 -0.0600027 11.04 0.619997 12.47 1.88C13.9 3.14 14.79 4.9 14.97 6.79C15.15 8.69 14.6 10.58 13.44 12.08Z"
+                    fill="#14AE5C" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2318">
+                    <rect width="17.64" height="17.77" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+
+            <form class="header__search-form" id="search-form" action="/search" method="GET">
+              <input type="text" class="header__search-bar" id="search-bar" placeholder="Tìm kiếm..." name="q"> <button
+                type="submit" class="header__search-submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div class="header__lang-switcher">
+            <div class="lang-switcher__current">
+              <span>VI</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path d="M0.75 0.75L4.75 4.75L8.75 0.75" stroke="#13AE5B" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+
+            <ul class="lang-switcher__dropdown">
+              <li><a href="/vi">VI (Tiếng Việt)</a></li>
+              <li><a href="/en">EN (English)</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
   </header>
+
+
   <!-- End Header  -->
 
   <!-- Body  -->
@@ -140,8 +214,25 @@
 
       <!-- 2 ảnh đầu -->
       <div class="home-content__image-wrapper">
-        <img class="home-content__image3">
-        <img class="home-content__anh01">
+        <div class="swiper home-slider">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <img src="./assets/images/image3.png" alt="Bộ sách Ôn thi vào lớp 10">
+            </div>
+
+            <div class="swiper-slide">
+              <img src="./assets/images/image3.png" alt="Slide 2">
+            </div>
+
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+        <img class="home-content__anh01" src="./assets/images/anh-01 1.jpg" alt="Ảnh tĩnh">
       </div>
       <div class="rectangle9">
 
@@ -192,12 +283,421 @@
             </div>
 
             <div class="about__cta">
-              <a href="/gioi-thieu" class="btn btn--primary">XEM THÊM</a>
+              <a href="/gioi-thieu">XEM THÊM</a>
             </div>
           </div>
         </div>
       </section>
       <!-- End Giới thiệu 1 -->
+
+      <!-- Thống kê -->
+      <section class="stats">
+        <div class="container">
+          <div class="stats__content">
+            <div class="stats__item-background">
+              <svg class="stats__item-background1" xmlns="http://www.w3.org/2000/svg" width="1919" height="149"
+                viewBox="0 0 1919 149" fill="none">
+                <path d="M0 0H1920V149H0V0Z" fill="url(#paint0_linear_1_2332)" />
+                <defs>
+                  <linearGradient id="paint0_linear_1_2332" x1="0" y1="74.5" x2="1920" y2="74.5"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#50A745" />
+                    <stop offset="1" stop-color="#75C350" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <svg class="stats__item-background2" xmlns="http://www.w3.org/2000/svg" width="998" height="149"
+                viewBox="0 0 998 149" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M997.985 0C994.685 52.252 983.359 102.325 965.226 149H439.324H32.7593C14.6264 102.325 3.30032 52.252 0 0H477.915H997.985Z"
+                  fill="url(#paint0_linear_1_2333)" />
+                <defs>
+                  <linearGradient id="paint0_linear_1_2333" x1="0" y1="74.5" x2="997.985" y2="74.5"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#29A237" />
+                    <stop offset="0.971154" stop-color="#74BF62" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <svg class="stats__item-background3" xmlns="http://www.w3.org/2000/svg" width="726" height="149"
+                viewBox="0 0 726 149" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M38.5915 0H406.084H687.169C708.257 45.9592 721.668 96.1733 725.76 149H373.325H0C4.09253 96.1733 17.5036 45.9592 38.5915 0Z"
+                  fill="url(#paint0_linear_1_2334)" />
+                <defs>
+                  <linearGradient id="paint0_linear_1_2334" x1="-152.577" y1="74.5" x2="725.76" y2="74.5"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#80C673" />
+                    <stop offset="1" stop-color="#68B74D" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <ul class="stats__list">
+              <li class="stats__item">
+                <div class="stats__item-icon">
+                  <svg class="stats__item-icon1" xmlns="http://www.w3.org/2000/svg" width="52" height="48"
+                    viewBox="0 0 52 48" fill="none">
+                    <path
+                      d="M48 40.4412L36 43.4412V11.5612L48 8.56116V40.4412ZM4 7.56116L16 4.56116V36.4412L4 39.4412V7.56116ZM20 5.24116L32 11.2412V42.7712L20 36.7712V5.24116ZM51.23 4.42116C50.99 4.23116 50.71 4.10116 50.41 4.04116C50.11 3.98116 49.81 3.98116 49.51 4.06116L34.23 7.88116L18.89 0.21116C18.47 0.00116016 17.98 -0.0588398 17.51 0.0611602L1.51 4.06116C1.08 4.17116 0.7 4.42116 0.42 4.77116C0.15 5.12116 0 5.55116 0 6.00116V42.0012C0 42.3012 0.07 42.6012 0.2 42.8812C0.33 43.1512 0.53 43.3912 0.77 43.5812C1.01 43.7712 1.29 43.9012 1.59 43.9612C1.89 44.0212 2.2 44.0212 2.49 43.9412L17.77 40.1212L33.11 47.7912C33.38 47.9312 33.69 48.0012 34 48.0012C34.16 48.0012 34.33 47.9812 34.49 47.9412L50.49 43.9412C50.92 43.8312 51.31 43.5812 51.58 43.2312C51.85 42.8812 52 42.4512 52 42.0012V6.00116C52 5.70116 51.93 5.40116 51.8 5.12116C51.66 4.85116 51.47 4.61116 51.23 4.42116Z"
+                      fill="white" />
+                  </svg>
+                  <span class="stats__item-number">150+</span>
+                </div>
+                <div class="stats__item-content">
+                  <p class="stats__item-label">Xuất bản phẩm mới mỗi năm</p>
+                </div>
+              </li>
+
+              <li class="stats__item">
+                <div class="stats__item-icon">
+                  <svg class="stats__item-icon2" xmlns="http://www.w3.org/2000/svg" width="56" height="48"
+                    viewBox="0 0 56 48" fill="none">
+                    <path
+                      d="M46 21C46 21.59 45.82 22.17 45.49 22.67C45.16 23.16 44.69 23.55 44.14 23.77C43.6 24 43 24.06 42.41 23.94C41.83 23.82 41.29 23.54 40.87 23.12C40.45 22.7 40.16 22.17 40.05 21.58C39.94 21 40 20.4 40.23 19.85C40.46 19.3 40.84 18.83 41.33 18.5C41.83 18.18 42.41 18 43 18C43.8 18 44.56 18.32 45.12 18.88C45.68 19.44 46 20.2 46 21ZM52 34H46V30C46 29.47 45.79 28.96 45.41 28.59C45.03 28.22 44.53 28 44 28H12C11.47 28 10.96 28.21 10.59 28.59C10.22 28.97 10 29.47 10 30V34H4V16C4 14.9 5.05 14 6.33 14H49.67C50.95 14 52 14.9 52 16V34ZM42 44H14V32H42V44ZM14 4H42V10H14V4ZM49.67 10H46V2C46 1.47 45.79 0.96 45.41 0.59C45.03 0.22 44.53 0 44 0H12C11.47 0 10.96 0.21 10.59 0.59C10.22 0.97 10 1.47 10 2V10H6.33C2.84 10 0 12.69 0 16V36C0 36.53 0.21 37.04 0.59 37.41C0.97 37.78 1.47 38 2 38H10V46C10 46.53 10.21 47.04 10.59 47.41C10.97 47.78 11.47 48 12 48H44C44.53 48 45.04 47.79 45.41 47.41C45.78 47.03 46 46.53 46 46V38H54C54.53 38 55.04 37.79 55.41 37.41C55.78 37.03 56 36.53 56 36V16C56 12.69 53.16 10 49.67 10Z"
+                      fill="white" />
+                  </svg>
+                  <span class="stats__item-number">30.000+</span>
+                </div>
+                <div class="stats__item-content">
+                  <p class="stats__item-label">Bản in mỗi năm</p>
+                </div>
+              </li>
+
+              <li class="stats__item">
+                <div class="stats__item-icon">
+                  <svg class="stats__item-icon3" xmlns="http://www.w3.org/2000/svg" width="63" height="44"
+                    viewBox="0 0 63 44" fill="none">
+                    <path
+                      d="M58.6378 17.105L52.4378 4.685L48.0078 6.895L54.2178 19.315L58.6378 17.105ZM46.3278 26.165L39.3978 20.615C34.5078 24.615 28.3078 25.145 23.1678 21.865C22.6578 21.545 22.2378 21.115 21.9178 20.605C21.5978 20.095 21.4078 19.525 21.3378 18.925C21.2678 18.325 21.3378 17.725 21.5378 17.165C21.7378 16.595 22.0578 16.085 22.4878 15.665C22.4978 15.655 22.4978 15.655 22.5078 15.645L33.7278 4.765L31.3278 4.075L18.7278 7.675L11.8878 21.355L24.1878 30.145L38.7178 33.775L46.3278 26.165ZM4.00777 17.105L8.42777 19.315L14.6378 6.895L10.2178 4.685L4.00777 17.105ZM50.8878 21.605L44.0878 8.005H36.1278L25.3178 18.505C28.4778 20.525 33.4478 21.085 37.8978 16.595C38.2478 16.245 38.7078 16.035 39.2078 16.005C39.6978 15.975 40.1878 16.135 40.5678 16.445L49.1678 23.335L50.8878 21.605ZM62.4378 18.375C62.2778 18.875 62.0078 19.335 61.6678 19.735C61.3278 20.135 60.9078 20.455 60.4378 20.695L54.5178 23.655L40.7478 37.415C40.5078 37.655 40.1978 37.835 39.8678 37.925C39.5378 38.015 39.1878 38.025 38.8478 37.935L22.8478 33.935C22.6078 33.875 22.3778 33.765 22.1678 33.625L8.28777 23.715L2.21777 20.675C1.26777 20.205 0.547774 19.365 0.207774 18.365C-0.132226 17.365 -0.0522256 16.265 0.427774 15.315L6.63777 2.895C7.11777 1.945 7.94777 1.225 8.95777 0.895C9.96777 0.555 11.0578 0.635 12.0078 1.115L17.5278 3.865L30.7778 0.075C31.1378 -0.025 31.5178 -0.025 31.8778 0.075L45.1278 3.865L50.6478 1.115C51.5978 0.645 52.6978 0.565 53.6978 0.895C54.6978 1.225 55.5378 1.955 56.0078 2.905L62.2178 15.325C62.4578 15.795 62.5978 16.305 62.6378 16.825C62.6778 17.345 62.6078 17.875 62.4378 18.375ZM29.2678 42.485C29.1578 42.915 28.9078 43.305 28.5578 43.575C28.2078 43.845 27.7778 43.995 27.3278 43.995C27.1578 43.995 26.9878 43.975 26.8278 43.935L18.8278 41.935C18.6078 41.875 18.3978 41.785 18.1978 41.655L12.1978 37.655C11.7578 37.365 11.4478 36.905 11.3478 36.385C11.2478 35.865 11.3478 35.325 11.6478 34.885C11.9378 34.445 12.3978 34.135 12.9178 34.035C13.4378 33.935 13.9778 34.035 14.4178 34.335L20.1278 38.145L27.7978 40.065C28.0578 40.125 28.2978 40.235 28.5078 40.395C28.7178 40.555 28.8978 40.745 29.0378 40.975C29.1778 41.205 29.2678 41.455 29.3078 41.715C29.3378 41.965 29.3278 42.235 29.2678 42.485Z"
+                      fill="white" />
+                  </svg>
+                  <span class="stats__item-number">600+</span>
+                </div>
+                <div class="stats__item-content">
+                  <p class="stats__item-label">Đội ngũ tác giả, CTV</p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="rectangle13">
+
+      </div>
+      <div class="rectangle12">
+
+      </div>
+
+      <!-- End Thống kê -->
+
+      <!-- Hệ thống sản phẩm -->
+      <section class="product-system">
+        <div class="container">
+
+          <h2 class="product-system__title">
+            HỆ THỐNG SẢN PHẨM GIÁO DỤC CỦA CHÚNG TÔI
+          </h2>
+
+          <ul class="product-system__list">
+
+            <li class="product-system__item">
+              <a href="/danh-muc/sach-giao-khoa" class="product-card">
+                <div class="product-card__image-wrapper product-card__image-wrapper--green">
+                  <img src="./assets/images/Group.png" alt="Biểu tượng Sách Giáo Khoa">
+                </div>
+                <div class="product-card__title">
+                  <div class="product-card__title-background"></div>
+                  <h3 class="product-card__title-name">SÁCH GIÁO KHOA</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="product-system__item">
+              <a href="/danh-muc/sach-tham-khao" class="product-card">
+                <div class="product-card__image-wrapper product-card__image-wrapper--yellow">
+                  <img src="./assets/images/Group (1).png" alt="Biểu tượng Sách Tham Khảo">
+                </div>
+                <div class="product-card__title">
+                  <div class="product-card__title-background"></div>
+                  <h3 class="product-card__title-name">SÁCH THAM KHẢO</h3>
+                </div>
+              </a>
+            </li>
+
+            <li class="product-system__item">
+              <a href="/danh-muc/sach-dia-phuong" class="product-card">
+                <div class="product-card__image-wrapper product-card__image-wrapper--blue">
+                  <img src="./assets/images/Group (2).png" alt="Biểu tượng Sách Địa Phương">
+                </div>
+                <div class="product-card__title">
+                  <div class="product-card__title-background"></div>
+                  <h3 class="product-card__title-name">SÁCH ĐỊA PHƯƠNG</h3>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="rectangle18">
+
+          </div>
+          <div class="rectangle19">
+
+          </div>
+        </div>
+      </section>
+      <!-- End Hệ thống sản phẩm -->
+
+      <!-- Hệ sinh thái -->
+      <section class="digital-ecosystem">
+        <div class="container">
+
+          <div class="digital-ecosystem__layout">
+
+
+            <nav class="digital-ecosystem__nav">
+              <ul class="digital-ecosystem__nav-list">
+
+                <li class="digital-ecosystem__nav-item">
+                  <a href="/sach-giao-khoa" class="ecosystem-nav-card ecosystem-nav-card--green">
+                    <div class="ecosystem-nav-card__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"
+                        fill="none">
+                        <circle cx="75" cy="75" r="74" fill="white" stroke="#95CC44" stroke-width="2" />
+                      </svg>
+                      <img src="./assets/images/Group (4).png" alt="Biểu tượng Sách Giáo Khoa">
+                    </div>
+                    <span class="ecosystem-nav-card__text">SÁCH GIÁO KHOA</span>
+                  </a>
+                </li>
+
+                <li class="digital-ecosystem__nav-item">
+                  <a href="/sach-tham-khao" class="ecosystem-nav-card ecosystem-nav-card--yellow">
+                    <div class="ecosystem-nav-card__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"
+                        fill="none">
+                        <circle cx="75" cy="75" r="74" fill="white" stroke="#95CC44" stroke-width="2" />
+                      </svg>
+                      <img src="./assets/images/Group (5).png" alt="Biểu tượng Sách Tham Khảo">
+                    </div>
+                    <span class="ecosystem-nav-card__text">SÁCH THAM KHẢO</span>
+                  </a>
+                </li>
+
+                <li class="digital-ecosystem__nav-item">
+                  <a href="/hoc-lieu-khac" class="ecosystem-nav-card ecosystem-nav-card--blue">
+                    <div class="ecosystem-nav-card__icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"
+                        fill="none">
+                        <circle cx="75" cy="75" r="74" fill="white" stroke="#95CC44" stroke-width="2" />
+                      </svg>
+                      <img src="./assets/images/Group (6).png" alt="Biểu tượng Học Liệu Giáo Dục Khác">
+                    </div>
+                    <span class="ecosystem-nav-card__text">HỌC LIỆU GIÁO DỤC KHÁC</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="digital-ecosystem__content">
+              <div class="content__wrapper">
+                <p class="digital-ecosystem__description">
+                  Hệ sinh thái học liệu số là nền tảng quan trọng trong giáo dục hiện đại. Chúng tôi có các tài nguyên
+                  giáo dục ở dạng định dạng số như ebook, slide, video bài giảng, ngân hàng câu hỏi, đề thi, hệ thống
+                  kiểm
+                  tra đánh giá,... Những tài nguyên này giúp cá nhân hóa việc học, tăng khả năng chia sẻ, hỗ trợ tương
+                  tác
+                  dạy và học linh hoạt.
+                </p>
+
+                <a href="/giai-phap" class="btn btn--primary">
+                  KHÁM PHÁ CÁC GIẢI PHÁP
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Hệ sinh thái -->
+
+
+      <!-- Tin tức  -->
+      <section class="news-section">
+        <div class="rectangle27"></div>
+        <div class="rectangle28"></div>
+        <div class="container">
+
+          <h2 class="news-section__title">TIN TỨC</h2>
+
+          <ul class="news-section__list">
+
+            <li class="news-section__item">
+              <article class="news-card">
+
+                <div class="news-card__image-wrapper">
+                  <img class="news-card__image" src="./assets/images/Tintuc1.jpg">
+
+                  <div class="news-card__date-wrapper">
+                    <img src="./assets/images/Group (8).png" alt="">
+                    <time class="news-card__date" datetime="2024-09-11">
+                      11-09-2024
+                    </time>
+                  </div>
+                </div>
+
+                <div class="news-card__content">
+                  <h3 class="news-card__title">
+                    <a href="/tin-tuc/giao-duc-noi-bat-thang-08-205">
+                      TOP TIN TỨC GIÁO DỤC NỔI BẬT THÁNG 08/205
+                    </a>
+                  </h3>
+                  <p class="news-card__description">
+                    Điều chỉnh nội dung sách Giáo khoa phù hợp với thực tiễn...
+                  </p>
+                  <a href="/tin-tuc/giao-duc-noi-bat-thang-08-205" class="about__cta2">
+                    XEM THÊM
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="news-section__item">
+              <article class="news-card">
+                <div class="news-card__image-wrapper">
+                  <img class="news-card__image" src="./assets/images/Tintuc2.jpg" alt="Bộ sách giáo khoa mới 2025-2026">
+                  <div class="news-card__date-wrapper">
+                    <img src="./assets/images/Group (8).png" alt="">
+                    <time class="news-card__date" datetime="2024-09-11">
+                      11-09-2024
+                    </time>
+                  </div>
+                </div>
+                <div class="news-card__content">
+                  <h3 class="news-card__title">
+                    <a href="/tin-tuc/top-dau-sach-moi">
+                      TOP NHỮNG ĐẦU SÁCH MỚI TRONG NĂM HỌC 2025-2026
+                    </a>
+                  </h3>
+                  <p class="news-card__description">
+                    Những đầu sách mới dự kiến được phát hành trong năm học 2025-2026...
+                  </p>
+                  <a href="/tin-tuc/top-dau-sach-moi" class="about__cta2">
+                    XEM THÊM
+                  </a>
+                </div>
+              </article>
+            </li>
+
+            <li class="news-section__item">
+              <article class="news-card">
+                <div class="news-card__image-wrapper">
+                  <img class="news-card__image" src="./assets/images/Tintuc3.jpg" alt="Top sách bán chạy 2025">
+                  <div class="news-card__date-wrapper">
+                    <img src="./assets/images/Group (8).png" alt="">
+                    <time class="news-card__date" datetime="2024-09-11">
+                      11-09-2024
+                    </time>
+                  </div>
+                </div>
+                <div class="news-card__content">
+                  <h3 class="news-card__title">
+                    <a href="/tin-tuc/sach-ban-chay-2025">
+                      TOP ĐẦU SÁCH BÁN CHẠY NĂM 2025
+                    </a>
+                  </h3>
+                  <p class="news-card__description">
+                    Top đầu sách bán chạy năm 2025 của Công ty cổ phần Dịch vụ Xuất bản...
+                  </p>
+                  <a href="/tin-tuc/sach-ban-chay-2025" class="about__cta2">
+                    XEM THÊM
+                  </a>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+      <!-- End Tin tức  -->
+
+
+      <!-- Đăng ký -->
+      <section class="registration-section">
+        <div class="rectangle27"></div>
+        <div class="rectangle28"></div>
+        <div class="container">
+
+          <div class="registration-layout">
+
+            <div class="registration-content">
+              <h2 class="registration-content__title">
+                ĐĂNG KÝ NGAY ĐỂ KHÔNG BỎ LỠ CƠ HỘI
+                HỌC TẬP & PHÁT TRIỂN BẢN THÂN
+              </h2>
+
+              <div class="registration-content__image-group">
+                <img src="./assets/images/kids.png" alt="Học sinh vui vẻ học tập"
+                  class="registration-content__image-kids">
+
+                <img src="./assets/images/books.png" alt="Sách vở và bút" class="registration-content__image-books">
+              </div>
+            </div>
+
+            <div class="registration-form-wrapper">
+              <form action="/submit-registration" method="POST" class="registration-form">
+
+                <div class="form-row form-row--two-cols">
+                  <div class="form-group">
+                    <input type="text" id="reg-name" name="name" placeholder="Họ và tên" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="tel" id="reg-phone" name="phone" placeholder="Số điện thoại" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <input type="email" id="reg-email" name="email" placeholder="Email" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <input type="text" id="reg-address" name="address" placeholder="Địa chỉ">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <select id="reg-topic" name="topic">
+                      <option value="" disabled selected>Nội dung đăng ký</option>
+                      <option value="tu-van">Tư vấn học tập</option>
+                      <option value="dang-ky-sach">Đăng ký sách</option>
+                      <option value="su-kien">Tham gia sự kiện</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <textarea id="reg-notes" name="notes" placeholder="Ghi chú (Nếu có)" rows="5"></textarea>
+                  </div>
+                </div>
+
+                <div class="form-row form-row--submit">
+                  <button type="submit" class="btn--full-width">
+                    ĐĂNG KÝ NGAY
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- End Đăng ký -->
 
     </div>
   </section>
@@ -255,6 +755,9 @@
     </div>
   </footer>
   <!-- End Footer -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./assets/js/menu-header.js"></script>
 
 </body>
 
