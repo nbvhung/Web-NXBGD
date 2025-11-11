@@ -1,22 +1,32 @@
 // Đợi cho toàn bộ trang web tải xong
 document.addEventListener("DOMContentLoaded", function() {
+    const menuItems = document.querySelectorAll(".menu__item");
     
-    //Lấy đường dẫn trang hiện tại (ví dụ: "/gioi-thieu.html")
     const currentPagePath = window.location.pathname;
 
-    const menuLinks = document.querySelectorAll(".menu__link");
+    menuItems.forEach(function(item) {
+        item.classList.remove("menu__item--active");
+    });
 
-    menuLinks.forEach(function(link) {
-        const linkPath = link.getAttribute("href");
-        if (currentPagePath === linkPath) {
-            
-            // Nếu TRÙNG NHAU, tìm <li> cha và thêm class "active"
-            link.closest(".menu__item").classList.add("menu__item--active");
+    menuItems.forEach(function(item) {
+        const link = item.querySelector(".menu__link");
+
+        if (link) {
+            const linkPath = new URL(link.href).pathname;
+
+            let isMatch = (currentPagePath === linkPath);
+
+            if (!isMatch) {
+                if ((currentPagePath === "/" && linkPath.endsWith("/index.html")) ||
+                    (currentPagePath.endsWith("/index.html") && linkPath === "/")) {
+                    isMatch = true;
+                }
+            }
+            if (isMatch) {
+                item.classList.add("menu__item--active");
+            }
         }
     });
-    if (currentPagePath === "/") {
-         document.querySelector('a[href="/"]').closest(".menu__item").classList.add("menu__item--active");
-    }
 });
 
 
