@@ -1,4 +1,3 @@
-/* --- Cài đặt chung --- */
 body {
     font-family: 'Inter', sans-serif; 
     margin: 0;
@@ -6,134 +5,177 @@ body {
     background-color: #f4f4f4;
 }
 
-.container {
-    max-width: 1200px;
+.breadcrumb{
+    max-width: 1380px; 
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 15px; 
 }
 
-/* --- 3. Breadcrumb --- */
+/* --- Breadcrumb --- */
+.breadcrumb-container {
+    margin-bottom: 10px; 
+}
+
 .breadcrumb-bar {
     position: relative;
-    margin-top: 15px; 
-    padding: 2.2px 15px; 
-    font-size: 15px; 
-    color: #ffffff;
-    font-weight: bold;
+    left: 24px;
+    margin-top: 117px;
     display: flex;
-    align-items: center;
-    gap: 8px;
+    align-items: center; 
+    font-size: 20px; 
+    color: #ffffff;
+    font-weight: 700; 
+    padding-left: 21px; 
+    gap: 17px;
+    height: 39px; 
+    box-sizing: border-box; 
     z-index: 2; 
 }
-.breadcrumb-bar .icon {
-    fill: white;
-    width: 26px;
-    height: 26px;
-}
+
+/* Thanh xanh nhạt (lớp trên) */
 .breadcrumb-bar::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%; 
-    width: 68%;
+    height: 100%; /* 39px */
+    width: 68.26%; /* 942px / 1380px */
     background-color: #95CC44;
     z-index: -1; 
 }
+
+/* Thanh xanh đậm (lớp đế) */
 .breadcrumb-bar::after {
     content: '';
     position: absolute;
-    left: 0;
-    height: 50%; 
+    height: 20px; 
     width: 100%; 
     background-color: #009950;
     z-index: -2; 
-    top: 50%;
+    top: 19px;
 }
 
-/* --- 4. Main Content --- */
-.main-content {
-    padding-bottom: 30px;
+.container-page-header {
+    padding-top: 0px; 
+    padding-bottom: 10px;
+    position: relative; 
+    left: 270px;
 }
-.main-content > .container:first-of-type {
-    padding-top: 15px; 
-}
-
-.content-wrapper {
-    display: flex;
-    gap: 30px;
-    margin-top: 15px; 
-    align-items: stretch;
-}
-.content-left {
-    flex: 2.6;
-}
-.page-title {
-    color: #009950;
+.page-subtitle {
+    position: relative;
+    top: 21px;
     font-size: 24px;
+    font-weight: 700;
+    color: #009950;
+    margin:0;
+    line-height: 1.2; 
 }
-.page-date {
-    font-size: 12px;
-    color: #777;
+.page-meta-date {
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 300; 
+    color: #000000;
     display: block;
-    margin-bottom: 20px;
+    position: relative;
+    margin-top: 20px;
 }
 
-/* Sidebar */
+.page-header-block {
+    margin-bottom: 21px;
+}
+
+/* Layout 2 cột */
+.container-content-wrapper {
+    max-width: 1380px; 
+    margin: 0 auto;
+    padding-left: 43px;
+    padding-right: 15px;
+    padding-bottom: 134px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-start; /* Cột cao độc lập */
+    gap: 14px; 
+}
+
+.content-left {
+    /* 921px / 1380px (container) ~ 66.7% */
+    flex-basis: 69%; 
+    flex-shrink: 0;
+}
+
 .sidebar-right {
-    flex: 1.12;
+    /* 445px / 1380px (container) ~ 32.2% */
+    flex-basis: 33.3%;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    gap: 9px; /* Khoảng cách 2 ảnh */
 }
 .sidebar-widget {
-    margin-bottom: 15px; 
+    margin-bottom: 0;
 }
 
-/* Placeholder và ảnh */
 .placeholder-image {
     position: relative;
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden; 
+    border: 1px dashed #ccc; 
+    background-color: #eee; 
+    height: 0;
+}
+.placeholder-image::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #777;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
 }
 .placeholder-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover; 
     display: block; 
 }
+
 .main-chart-placeholder {
-    width: 100%; 
-    height: 100%; 
-    border: 1px dashed #ccc;
-    background-color: #eee;
+    padding-bottom: 54.51%; /* (502 / 921) * 100% */
 }
+
 .placeholder-image.ad-1 {
-    height: 140px; 
-    border: 1px dashed #ccc;
-    background-color: #eee;
+    padding-bottom: 28.31%; /* (126 / 445) * 100% */
 }
+
 .sidebar-widget.image-with-button-widget {
     position: relative;
-    flex-grow: 1; 
 }
 .placeholder-image.group-photo {
-    height: 100%; 
-    border: 1px dashed #ccc;
-    background-color: #eee;
+    padding-bottom: 82.43%; /* (366 / 444) * 100% */
 }
 
 .view-more-btn {
-    background-color: #008a4c;
+    background-color: #02542D;
     color: white;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    width: auto; 
-    position: absolute;
-    bottom: 15px; 
-    right: 15px; 
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;    
+    width: 180px;
+    height: 50px;
     border-radius: 25px;
-    padding: 10px 20px; 
-    font-size: 14px;
+
+    border: none;
+    cursor: pointer;
     z-index: 2; 
+    
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }

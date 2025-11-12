@@ -1,0 +1,311 @@
+/* --- Cài đặt chung --- */
+body {
+    font-family: 'Inter', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.breadcrumb{
+    max-width: 1380px; 
+    margin: 0 auto;
+    padding: 0 15px; 
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb-container {
+    margin-bottom: 10px; 
+}
+
+.breadcrumb-bar {
+    position: relative;
+    left: 24px;
+    margin-top: 117px;
+    display: flex;
+    align-items: center; 
+    font-size: 20px; 
+    color: #ffffff;
+    font-weight: 700; 
+    padding-left: 21px; 
+    gap: 17px;
+    height: 39px; 
+    box-sizing: border-box; 
+    z-index: 2; 
+}
+
+/* Thanh xanh nhạt (lớp trên) */
+.breadcrumb-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* 39px */
+    width: 68.26%; /* 942px / 1380px */
+    background-color: #95CC44;
+    z-index: -1; 
+}
+
+/* Thanh xanh đậm (lớp đế) */
+.breadcrumb-bar::after {
+    content: '';
+    position: absolute;
+    height: 20px; 
+    width: 100%; 
+    background-color: #009950;
+    z-index: -2; 
+    top: 19px;
+}
+.container-page-header {
+    padding-top: 0px; 
+    padding-bottom: 10px;
+    position: relative; 
+    left: 270px;
+}
+.page-subtitle {
+    position: relative;
+    top: 21px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #009950;
+    margin:0;
+    line-height: 1.2; 
+}
+.page-meta-date {
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 300; 
+    color: #000000;
+    display: block;
+    position: relative;
+    margin-top: 20px;
+}
+
+.container-banner {
+    margin-bottom: 48px; 
+}
+
+.intro-banner-widget {
+    position: relative; 
+    left: 265px;
+}
+
+.placeholder-image.banner-image {
+    padding-bottom: 36.304%; /* (501 / 1380) * 100% */
+}
+
+/* Nút "Xem Thêm" trên banner */
+.intro-banner-widget .view-more-btn {
+    position: absolute;
+    left: 37.5%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 50px;
+    background-color: #02542D;
+    border-radius: 25px; /* (50px / 2) */
+    bottom: 37px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: white; 
+    font-weight: 500; 
+    
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.page-title.centered-title {
+    text-align: center;
+    border-bottom: none;
+    position: relative;
+    left: 35px;
+    font-size: 36px;
+    color: #14AE5C;
+    font-weight: 700; /* Inter-Bold */
+    
+    margin-top: 0;
+    margin-bottom: 41px;
+    
+    line-height: 1.4;
+}
+
+.container-intro-text {
+    max-width: 1380px; 
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    margin-bottom: 14px;
+    position: relative;
+    left: 34px;
+}
+
+.intro-text-box {
+    background-color: #E7F1D4;
+    border-radius: 5px;
+    position: relative;
+    height: 374px;
+    padding: 57px 66px 87px 67px;
+    box-sizing: border-box;
+}
+
+.intro-text-box p {
+    font-size: 20px;
+    color: #303030;
+    font-weight: 400; 
+    line-height: 26px;
+    margin: 0;
+}
+
+.intro-text-box .text-button {
+    width: 180px;
+    height: 50px;
+    background-color: #02542D;
+    border-radius: 25px; 
+
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: white;
+    font-weight: 500; 
+    
+    border: none;
+    cursor: pointer;
+    
+    position: absolute;
+    top: 293px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container-content-wrapper {
+    max-width: 1380px; 
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 136px;
+    box-sizing: border-box;
+    position: relative;
+    left: 19px;
+    display: flex;
+    align-items: flex-start; 
+    gap: 14px; /* Khoảng cách giữa 2 cột */
+}
+
+.content-left {
+    flex-basis: 902px; 
+    flex-shrink: 0;
+    background-color: #E7F1D4;
+    border-radius: 5px;
+    
+    /* Padding chung T/B/L/R */
+    padding: 35px 42px 43px 67px;
+    box-sizing: border-box;
+}
+
+/* Các khối văn bản bên trong cột trái */
+.text-content p {
+    font-size: 20px;
+    color: #303030;
+    font-weight: 400; /* Inter-Regular */
+    line-height: 26px;
+    margin: 0;
+}
+
+/* Khoảng cách giữa các đoạn trong cùng 1 khối */
+.text-segment p + p {
+    margin-top: 26px;
+}
+
+/* Tiêu đề (1. Lịch sử, 2. Định hướng) */
+.text-title {
+    font-size: 24px;
+    font-weight: 700; 
+    color: #14AE5C;
+    margin: 0;
+}
+
+
+#contact-info {
+    margin-bottom: 18px;
+}
+.text-title:nth-of-type(1) { /* Tiêu đề "1. Lịch sử" */
+    margin-bottom: 16px;
+}
+.text-segment:nth-of-type(2) { /* Khối "Công ty Cổ phần..." */
+    margin-bottom: 26px;
+}
+.text-segment:nth-of-type(3) { /* Khối "Năm 2018..." */
+    margin-bottom: 29px;
+}
+.text-title:nth-of-type(2) { /* Tiêu đề "2. Định hướng" */
+    margin-bottom: 29px;
+}
+#contact-info p + p {
+    margin-top: 0; 
+}
+
+/* --- Sidebar (Cột phải) --- */
+.sidebar-right {
+    flex-basis: 464px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Khoảng cách giữa 3 ảnh */
+}
+
+.sidebar-widget {
+    margin-bottom: 0;
+}
+
+/* khung ảnh */
+.placeholder-image {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; 
+    border: 1px dashed #ccc; 
+    background-color: #eee; 
+}
+.placeholder-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block; 
+}
+
+/* Đặt chiều cao cố định cho 3 ảnh */
+.placeholder-image.ad-1 {
+    height: 573px; 
+}
+.placeholder-image.group-photo {
+    height: 530px; 
+}
+.placeholder-image.ad-2 {
+    height: 654px; 
+}
+
+/* Style cho 3 nút "XEM THÊM" */
+.sidebar-widget .view-more-btn {
+    /* (Đoạn 5) Kích thước, màu, bo góc */
+    width: 180px;
+    height: 50px;
+    background-color: #02542D;
+    border-radius: 25px;
+
+    /* (Đoạn 5) Font */
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: white;
+    font-weight: 500; /* Inter-Medium */
+    
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
