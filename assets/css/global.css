@@ -276,51 +276,53 @@ img {
 
 /* Header  */
 
+.container {
+    width: 100%;
+    
+    /* * ĐÂY LÀ THỦ PHẠM:
+     * Con số 1200px này có thể đang hơi nhỏ so với màn hình của bạn.
+     * Bạn hãy TĂNG nó lên.
+    */
+    max-width: 1390px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
 .header {
-    width: 1920px;
-    height: 45px;
-    flex-shrink: 0;
+    width: 100%; 
+}
+
+.header__top {
     background: #13AE5B;
     font-family: "Inter", sans-serif;
 }
 
 /* Phần chứa liên hệ */
-.header__top .header__contact {
+.header__contact {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     gap: 34.24px;
 }
 
-/* Phone */
 .header__phone {
     display: flex;
     align-items: center;
     gap: 8px;
-    /* tạo khoảng cách giữa icon và text */
 }
 
 .header__phone svg {
     width: 20px;
     height: 19px;
-    flex-shrink: 0;
     fill: #FFF;
-    margin-left: 277px;
-    /* nếu trong figma icon bị đẩy qua phải */
-    margin-top: 14px;
-    margin-bottom: 12px;
 }
 
 .header__phone p {
     color: #FFF;
-    font-family: "Inter", sans-serif;
     font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 12px;
-    margin-bottom: 9px;
-    /* bỏ margin-right cực lớn vì sẽ phá flex layout */
+    margin: 0; 
 }
 
 /* Email */
@@ -328,78 +330,82 @@ img {
     display: flex;
     align-items: center;
     color: #FFF;
-    font-family: "Inter", sans-serif;
     font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
     gap: 10px;
 }
 
 .header__email svg {
     width: 27px;
     height: 16px;
-    flex-shrink: 0;
     fill: #FFF;
-    margin-top: 16px;
-    margin-bottom: 13px;
-    margin-left: 34.24px;
 }
 
 .header__email p {
     color: #FFF;
-    font-family: "Inter", sans-serif;
     font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 12px;
-    margin-right: 1092px;
-    margin-bottom: 9px;
+    margin: 0; 
 }
 
+.header__nav {
+    background: #FFF; 
+    border-bottom: 1px solid #EEE;
+}
 
 .header__nav-inner {
+    /* .container đã xử lý căn giữa */
     display: flex;
+    align-items: center;
+    
+    /* Đã XÓA: justify-content: space-between; */
+    /* Thay bằng gap để kiểm soát khoảng cách */
+    gap: 30px; 
+    
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .header__logo {
     display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0; /* Không cho logo bị co lại */
 }
 
 .header__logo svg {
+    /* Đã XÓA: margin-left: 270px; (Rất quan trọng) */
+    /* Đã XÓA: margin-top/bottom cứng */
     width: 49.61px;
     height: 65.6px;
-    flex-shrink: 0;
-    margin-top: 21px;
     margin-right: 16.39px;
-    margin-left: 270px;
-    margin-bottom: 27px;
 }
 
 .header__logo-text .header__company-name {
     color: #14AE5C;
-    font-family: "Inter", sans-serif;
     font-size: 24px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    line-height: 1.2;
+    margin: 0;
 }
 
 .header__menu {
+    /* Đã XÓA: margin-left, margin-top... */
     display: flex;
     list-style: none;
-    margin-top: 43px;
-    margin-left: 47px;
-    margin-bottom: 27px;
+    margin: 0;
+    padding: 0;
+
+    /* THÊM: Cho phép menu chiếm hết không gian thừa ở giữa */
+    flex-grow: 1;
 }
 
 .menu {
     display: flex;
-}
+    flex-wrap: wrap; /* Cho phép menu xuống dòng nếu quá dài */
+    width: 100%; /* Đảm bảo .menu chiếm hết .header__menu */
 
+    /* THÊM: Đẩy các mục menu về phía bên phải */
+    justify-content: flex-end; 
+}
 .menu__item {
     display: flex;
     flex-shrink: 0;
@@ -488,13 +494,14 @@ img {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-shrink: 0; /* Không co lại */
 }
 
 .header__search {
+    /* Đã XÓA: margin-left: 88px; (Dùng gap) */
     position: relative;
     display: flex;
     align-items: center;
-    margin-left: 88px;
 }
 
 
@@ -611,63 +618,157 @@ img {
 
 /* Footer */
 .footer {
-    width: 1920px;
-    height: 156px;
-    flex-shrink: 0;
+    /* Đã XÓA: width: 1920px; height: 156px; */
+    width: 100%;
     background: #95CC44;
+    padding: 40px 0; /* Dùng padding thay cho height cứng */
+    margin-top: 50px; /* Thêm khoảng cách với nội dung */
 }
 
 .footer__inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Căn trên cùng cho đẹp */
+    flex-wrap: wrap; /* CHO PHÉP XUỐNG HÀNG trên mobile */
+    gap: 30px; /* Khoảng cách giữa logo và info khi xuống hàng */
 }
 
 .footer__logo {
     display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .footer__logo svg {
+    /* Đã XÓA: margin-left: 270px; margin-top/bottom cứng */
     width: 49.61px;
     height: 65.6px;
+    margin-right: 16.39px;
     flex-shrink: 0;
-    margin-top: 49px;
-    margin-bottom: 41.4px;
-    margin-left: 270px;
 }
 
 .footer__logo .footer__logo-text {
-    width: 446px;
-    height: 58px;
+    /* Đã XÓA: width: 446px; height: 58px; margin cứng */
     color: #FFF;
-    font-family: "Inter", sans-serif;
     font-size: 24px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    margin-left: 16.39px;
-    margin-top: 53px;
-    margin-bottom: 45px;
-    white-space: nowrap;
+    line-height: 1.2;
+    white-space: normal; /* Cho phép tên công ty xuống dòng */
+    margin: 0;
 }
 
 .footer__info {
-    width: 806px;
-    height: 83px;
-    flex-shrink: 0;
+    /* Đã XÓA: width: 806px; height: 83px; margin cứng */
     color: #303030;
-    text-align: justify;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 32px;
-    /* 160% */
-    margin-left: 151px;
-    margin-top: 34px;
-    margin-bottom: 39px;
-    margin-right: 181px;
-    white-space: nowrap;
+    font-size: 20px; /* Sẽ giảm cỡ chữ trên mobile */
+    line-height: 1.6;
+    text-align: left; /* Đổi sang trái cho dễ đọc khi responsive */
+    white-space: normal; /* Cho phép xuống dòng */
+    margin: 0;
+    /* max-width: 500px;  Giới hạn độ rộng nếu cần */
+}
+
+.footer__info p {
+    margin: 0 0 10px 0; /* Thêm khoảng cách giữa các dòng địa chỉ */
+}
+.footer__info p:last-child {
+    margin-bottom: 0;
 }
 
 /* End Footer */
+
+/* === BẮT ĐẦU CSS RESPONSIVE === */
+/* Áp dụng cho mọi màn hình TỪ 992px TRỞ XUỐNG (Tablet, Mobile) */
+@media (max-width: 992px) {
+
+    /* --- 1. SỬA HEADER TOP (Thanh xanh lá) --- */
+    .header__top-inner {
+        /* Tách Contact (trái) và Hamburger (phải) */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__contact {
+        /* Xếp chồng Phone và Email lên nhau */
+        flex-direction: column;
+        align-items: flex-start; /* Căn lề trái */
+        gap: 5px; /* Giảm khoảng cách */
+    }
+
+    /* Thu nhỏ chữ Phone/Email */
+    .header__phone p,
+    .header__email p {
+        font-size: 14px;
+        margin: 0; /* Bỏ margin thừa */
+    }
+
+
+    /* --- 2. SỬA HEADER NAV (Logo và Menu Grid) --- */
+    .header__nav-inner {
+        /* Xếp chồng Logo và Menu Grid */
+        flex-direction: column;
+        align-items: center; /* Căn giữa Logo */
+        gap: 15px;
+    }
+
+    /* Ẩn 2 nút Search và Lang đi */
+    .header__actions {
+        display: none;
+    }
+
+    /* --- 3. TẠO MENU DẠNG LƯỚI 2x3 --- */
+    .header__menu {
+        display: block; /* Đảm bảo menu (nav) hiện ra */
+        width: 100%; /* Chiếm 100% chiều rộng */
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap; /* BẮT BUỘC: để rớt hàng */
+        width: 100%;
+        justify-content: center; /* Căn giữa lưới */
+    }
+
+    .menu__item {
+        /* * TẠO GRID 3 CỘT: 
+         * 100% chia 3 = 33.33% 
+        */
+        flex-basis: 33.33%;
+        flex-grow: 1; /* Cho các item lấp đầy hàng */
+        border-right: none; /* Bỏ viền phải (nếu có) */
+        
+        /* Căn giữa chữ trong ô */
+        justify-content: center;
+    }
+    
+    .menu__link {
+        justify-content: center; /* Căn giữa chữ và icon (nếu có) */
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu__link svg {
+        display: none; /* Ẩn mũi tên dropdown cho gọn */
+    }
+    
+
+    /* --- 4. SỬA FOOTER (Như ảnh 1) --- */
+    .footer__inner {
+        /* Xếp chồng Logo và Info */
+        flex-direction: column;
+        align-items: flex-start; /* Căn lề trái */
+        flex-wrap: wrap; /* Bật lại flex-wrap */
+    }
+
+    .footer__info {
+        text-align: left; /* Đổi căn lề sang trái */
+        max-width: 100%; /* Chiếm 100% chiều rộng */
+        font-size: 16px; /* Thu nhỏ chữ */
+    }
+
+    .footer__logo .footer__logo-text {
+        font-size: 20px; /* Thu nhỏ chữ logo */
+    }
+}
+
