@@ -78,3 +78,22 @@ const swiper = new Swiper('.home-slider', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+// // nút sidebar
+// document.addEventListener('DOMContentLoaded', function() {
+    
+//     // 1. Tìm nút bấm (toggle) và menu (nav)
+//     const menuToggle = document.getElementById('menu-toggle');
+//     const mainNav = document.getElementById('main-nav');
+
+//     // 2. Đảm bảo là đã tìm thấy cả hai
+//     if (menuToggle && mainNav) {
+        
+//         // 3. Thêm sự kiện click cho nút
+//         menuToggle.addEventListener('click', function() {
+            
+//             // 4. Bật/tắt class "is-active" trên menu
+//             mainNav.classList.toggle('is-active');
+//         });
+//     }
+// });

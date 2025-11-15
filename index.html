@@ -38,6 +38,10 @@
             </svg>
             <p>kinhdoanh_heps@gmail.com</p>
           </span>
+
+          <button class="header__toggle" id="menu-toggle">
+
+          </button>
         </div>
       </div>
     </div>
@@ -45,7 +49,7 @@
     <!-- Navigation bar -->
     <div class="header__nav">
       <div class="container header__nav-inner">
-        <a class="header__logo" href="index.html">
+        <a class="header__logo" href="./index.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="66" viewBox="0 0 50 66" fill="none">
             <g clip-path="url(#clip0_1_2299)">
               <path
@@ -109,7 +113,7 @@
               </a>
               <ul class="submenu">
                 <li class="submenu__item">
-                  <a href="/san-pham/sach-giao-khoa.html">Sách giáo khoa</a>
+                  <a href="/">Sách giáo khoa</a>
                 </li>
                 <li class="submenu__item">
                   <a href="/san-pham/sach-tham-khao.html">Sách tham khảo</a>
@@ -210,27 +214,28 @@
 
   <!-- Body  -->
   <section class="home-content">
+    <div class="swiper home-slider">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <img src="./assets/images/image3.png" alt="Bộ sách Ôn thi vào lớp 10">
+        </div>
+
+        <div class="swiper-slide">
+          <img src="./assets/images/image3.png" alt="Slide 2">
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
     <div class="container">
 
       <!-- 2 ảnh đầu -->
       <div class="home-content__image-wrapper">
-        <div class="swiper home-slider">
-          <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <img src="./assets/images/image3.png" alt="Bộ sách Ôn thi vào lớp 10">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="./assets/images/image3.png" alt="Slide 2">
-            </div>
-
-          </div>
-
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
 
         <img class="home-content__anh01" src="./assets/images/anh-01 1.jpg" alt="Ảnh tĩnh">
       </div>
@@ -242,7 +247,10 @@
       </div>
       <!-- End 2 ảnh đầu -->
 
-      <!-- Giới thiệu 1 -->
+      
+
+    </div>
+    <!-- Giới thiệu 1 -->
       <section class="about">
         <div class="container">
           <div class="about__content">
@@ -439,13 +447,14 @@
               </a>
             </li>
           </ul>
-          <div class="rectangle18">
+          
+        </div>
+        <div class="rectangle18">
 
           </div>
           <div class="rectangle19">
 
           </div>
-        </div>
       </section>
       <!-- End Hệ thống sản phẩm -->
 
@@ -698,8 +707,6 @@
       </section>
 
       <!-- End Đăng ký -->
-
-    </div>
   </section>
   <!-- End Body  -->
 

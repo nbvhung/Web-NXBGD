@@ -1,31 +1,44 @@
-
-
-
 /* Body */
 
 /* 2 ảnh đầu  */
+
+
 .home-slider.swiper {
-    width: 100%; /* Slider thường rộng 100% */
-    height: 719px; /* Chiều cao bạn định nghĩa */
-    margin-top: 108px; /* Margin top bạn định nghĩa */
-    overflow: hidden; /* Bắt buộc cho swiper */
+    width: 100%;
+    /* Sẽ chiếm 100% trình duyệt */
+
+    /* Đã XÓA: margin-top: 108px; 
+       Việc này giúp nó "dán" lên trên */
+    margin-top: 0;
+
+    /* Dùng aspect-ratio để ảnh không bị quá cao */
+    aspect-ratio: 16 / 7;
+    /* Bạn có thể đổi số 7 này */
+    overflow: hidden;
 }
 
 .home-slider .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
+}
+
+.home-content__image-wrapper {
+    /* Thêm dòng này để dán ảnh tĩnh vào swiper */
+    margin-top: 0;
+    position: relative;
+    /* Làm mốc cho các thanh */
+    z-index: 2;
 }
 
 
 .home-content__anh01 {
-    display: block;     
-    max-width: 1477px; 
-
-    width: 100%;        
-    height: auto;       
-
+    display: block;
+    /* CSS của bạn ở đây đã RẤT TỐT (linh hoạt) */
+    max-width: 1477px;
+    width: 100%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
 }
@@ -34,9 +47,11 @@
     background: #fff;
     opacity: 0.7;
 }
+
 .home-slider .swiper-pagination-bullet-active {
     opacity: 1;
 }
+
 .home-slider .swiper-button-prev,
 .home-slider .swiper-button-next {
     color: #ffffff;
@@ -44,27 +59,123 @@
 
 .rectangle9 {
     position: relative;
-    width: 1699px;
+    /* Giữ nó "trong luồng" */
     height: 20px;
-    flex-shrink: 0;
     background: #95CC44;
-    z-index: -1;
+    z-index: 1;
+    /* Nằm dưới thanh xanh đậm */
+
+    /* === KỸ THUẬT TRÀN VIỀN === */
+    width: 100vw;
+    /* 100% chiều rộng màn hình */
+
+    /* Tính toán margin-left âm để kéo nó về lề trái */
+    /* *LƯU Ý: Thay 1200px và 15px cho khớp với .container của bạn* */
+    margin-left: calc(((1200px / 2) - 50vw) - 15px);
 }
 
+/* 2. THANH XANH ĐẬM (Linh hoạt + Căn phải + Đè lên) */
 .rectangle10 {
     position: relative;
-    width: 708px;
     height: 30px;
-    flex-shrink: 0;
     background: #009950;
+    z-index: 2;
+    /* Nằm trên thanh xanh lá */
+
+    /* SỬA LỖI: Bỏ width cứng, thay bằng % (responsive) */
+    /* width: 708px; */
+    width: 40%;
+    /* Bạn có thể đổi 40% -> 37% hoặc 50% cho vừa ý */
+
+    /* Căn lề phải (dính vào lề phải của .container) */
+    margin-left: auto;
+    margin-right: -185px;
+
+    /* SỬA LỖI: Kéo nó lên đè HẾT lên thanh nhạt (cao 20px) */
     margin-top: -20px;
-    margin-left: 1131px;
+}
+
+@media (max-width: 992px) {
+
+    .home-slider.swiper {
+        /* Cho slider cao hơn một chút (từ 16/7 -> 16/9) */
+        aspect-ratio: 16 / 9;
+    }
+
+    /* * Sửa lỗi tràn viền cho .rectangle9 trên Tablet.
+     * Bạn PHẢI đổi số 960px này cho khớp với max-width
+     * của .container ở breakpoint 992px của bạn.
+     * (Giả sử padding container vẫn là 15px)
+     */
+    .rectangle9 {
+        margin-left: calc(((960px / 2) - 50vw) - 15px);
+    }
+}
+
+
+/* === 2. Tinh Chỉnh cho MOBILE (Dưới 768px) === */
+@media (max-width: 768px) {
+
+    .container {
+        /* Xóa lề trái/phải để mọi thứ bên trong nó
+           tự động "full màn" */
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* 1. Slider (Swiper) */
+    .home-slider.swiper {
+        aspect-ratio: 4 / 5;
+        margin-top: 0;
+    }
+
+    /* Ẩn nút next/prev, người dùng sẽ quẹt tay */
+    .home-slider .swiper-button-prev,
+    .home-slider .swiper-button-next {
+        display: none;
+    }
+
+    .home-content__image-wrapper {
+        /* (Nó đã có width: 100%, 
+           nên nó cũng sẽ tự động full màn) */
+
+        /* Xóa margin âm nếu bạn đã thêm từ trước */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .rectangle9 {
+        /* Bỏ kỹ thuật 100vw và calc() */
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* 5. Thanh xanh đậm */
+    .rectangle10 {
+        width: 60%;
+        /* Giữ 60% (so với 100% màn hình) */
+        height: 25px;
+        margin-top: -18px;
+        margin-left: auto;
+        margin-right: 0;
+        /* Dính vào lề phải của màn hình */
+    }
 }
 
 /* End 2 ảnh đầu  */
 
 
 /* Giới thiệu 1 */
+
+.about__content {
+    /* Đặt chiều rộng tối đa cho khối "Giới thiệu"
+       (Bạn có thể đổi 1200px cho khớp với .container) */
+    max-width: 1200px;
+
+    /* Tự động căn giữa toàn bộ khối */
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .about__heading {
     color: #14AE5C;
@@ -73,26 +184,48 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: 463px;
+    text-align: center;
     margin-top: 42px;
-    margin-bottom: 41px
+    margin-bottom: 41px;
 }
 
 .about__grid {
     display: flex;
+    /* SỬA LỖI: Căn 2 cột con ra giữa (thay cho margin-left: 330px) */
+    justify-content: center;
+
+    /* SỬA LỖI: Dùng 'gap' (thay cho margin-left: 34px) */
+    gap: 34px;
+
+    /* Thêm: Cho phép xuống hàng trên mobile */
+    flex-wrap: wrap;
 }
+
+.about__grid .about__grid-1,
+.about__grid .about__grid-2 {
+    /* SỬA LỖI: Bỏ margin-left: 330px */
+
+    /* Dùng flex-basis để kiểm soát độ rộng (linh hoạt) */
+    flex-basis: 500px;
+    /* Độ rộng cơ bản, có thể chỉnh */
+    flex-grow: 1;
+    /* Cho phép chúng lớn lên */
+
+    /* Giới hạn độ rộng (thay cho width: 597px cứng) */
+    max-width: 600px;
+}
+
 
 .about__grid .about__grid-1 {
-    margin-left: 330px;
-}
-
-.about__grid .about__grid-2 {
-    margin-left: 34px;
+    display: flex;
+    flex-direction: column;
+    /* Dùng gap thay cho margin-bottom: 31px */
+    gap: 31px;
 }
 
 .about__grid .about__grid-2 .about__column .about__column-list {
     list-style-type: disc;
-    margin-left: 27px;
+    padding-left: 27px;
     width: 597px;
     height: 239px;
     flex-shrink: 0;
@@ -102,7 +235,7 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 1.3;
     /* 130% */
     margin-top: 16px;
 }
@@ -133,8 +266,6 @@
 }
 
 .about__grid .about__grid-1 .about__column .about__column-list {
-    width: 597px;
-    height: 49px;
     flex-shrink: 0;
     color: #303030;
     text-align: justify;
@@ -142,7 +273,7 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 1.3;
     /* 130% */
     margin-top: 16px;
 }
@@ -162,26 +293,108 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 330px;
-    margin-top: -25px;
+    margin-top: 40px;
+    transition: background-color 0.3s;
+}
+
+/* === BẮT ĐẦU CSS RESPONSIVE === */
+
+/* Áp dụng cho màn hình TỪ 992px TRỞ XUỐNG (Tablet) */
+@media (max-width: 992px) {
+
+    /* 1. Sắp xếp lại lưới */
+    .about__grid {
+        /* Chuyển 2 cột (PC) -> 1 cột (Mobile) */
+        flex-direction: column;
+
+        /* Giảm khoảng cách giữa các khối */
+        gap: 20px;
+    }
+
+    /* 2. Cho các cột chiếm 100% chiều rộng */
+    .about__grid .about__grid-1,
+    .about__grid .about__grid-2 {
+        flex-basis: 100%;
+        /* Chiếm 100% chiều rộng */
+        max-width: 100%;
+    }
+
+    /* 3. Sửa lại tiêu đề */
+    .about__heading {
+        font-size: 28px;
+        /* Giảm cỡ chữ tiêu đề */
+
+        /* Căn lề trái như trong ảnh mobile */
+        text-align: left;
+    }
+
+    /* 4. Sửa lại nội dung */
+    .about__column-list {
+        font-size: 16px;
+        /* Giảm cỡ chữ nội dung */
+        line-height: 1.5;
+        /* Tăng chiều cao dòng cho dễ đọc */
+    }
+
+    /* 5. Sửa lại nút bấm (CTA) */
+    .about__cta {
+        /* Căn giữa nút bấm trên mobile (như trong ảnh) */
+        margin-left: auto;
+        margin-right: auto;
+
+        /* Giảm cỡ chữ nút */
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about__heading {
+        font-size: 22px;
+        /* Chữ nhỏ hơn nữa */
+    }
+
+    .about__column .about__column-title {
+        font-size: 20px;
+        /* Chữ nhỏ hơn nữa */
+    }
+
+    .about__column-list {
+        font-size: 15px;
+    }
+
+    .about__cta {
+        width: 100%;
+        /* Nút full-width cho dễ bấm */
+        font-size: 18px;
+    }
 }
 
 /* End Giới thiệu 1 */
 
 /* Thống kê  */
 .stats {
-    width: 1920px;
-    height: 149px;
-    flex-shrink: 0;
-    fill: linear-gradient(90deg, #50A745 0%, #75C350 100%);
+    width: 100%;
     margin-top: 67px;
+    padding: 40px 0;
+    flex-shrink: 0;
+    background: linear-gradient(90deg, #50A745 0%, #75C350 100%);
+
+    position: relative;
+    overflow: hidden;
+    /* Ẩn mọi thứ tràn ra */
+}
+
+.stats .container {
+    max-width: 100%;
+    /* Bỏ 1200px, cho nó rộng 100% */
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .stats__item-background {
-    display: flex;
-    z-index: 1;
-    position: absolute;
+    display: none;
 }
+
 
 .stats__item-background1 {
     z-index: -1;
@@ -210,41 +423,57 @@
 
 .stats .stats__list {
     position: relative;
+    /* Nằm trên background */
     z-index: 2;
     display: flex;
+
+    /* SỬA LỖI: Tự động căn 3 item, thay vì margin cứng */
+    justify-content: space-around;
+    align-items: center;
+
+    flex-wrap: wrap;
+    /* Cho phép xuống hàng trên mobile */
+    gap: 30px;
+}
+
+.stats__item {
+    /* Căn giữa nội dung của item (icon/số và chữ) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 300px;
+    /* Độ rộng cơ bản */
+    text-align: center;
 }
 
 .stats__item .stats__item-icon {
     display: flex;
+    /* Căn giữa icon và con số */
+    align-items: center;
+    gap: 16px;
+    /* Khoảng cách giữa icon và số */
 }
 
-.stats__item-icon .stats__item-icon1 {
-    width: 52px;
-    height: 48.001px;
-    flex-shrink: 0;
+.stats__item-icon svg {
+    /* Đã XÓA: margin-left, margin-top, margin-bottom */
     fill: #FFF;
-    margin-left: 221px;
-    margin-top: 28px;
-    margin-bottom: 21px;
-    margin-right: 0;
+    flex-shrink: 0;
+    margin: 0;
 }
 
-.stats__item-icon .stats__item-icon2 {
+.stats__item-icon1 {
+    width: 52px;
+    height: 48px;
+}
+
+.stats__item-icon2 {
     width: 56px;
     height: 48px;
-    flex-shrink: 0;
-    fill: #FFF;
-    margin-top: 28px;
-    margin-left: 280px;
 }
 
-.stats__item-icon .stats__item-icon3 {
-    width: 62.649px;
-    height: 43.995px;
-    flex-shrink: 0;
-    fill: #FFF;
-    margin-top: 32px;
-    margin-left: 305px;
+.stats__item-icon3 {
+    width: 63px;
+    height: 44px;
 }
 
 .stats__item .stats__item-icon .stats__item-number {
@@ -254,8 +483,8 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: 16px;
-    margin-top: 11px;
+    margin: 0;
+
 }
 
 .stats__item-content .stats__item-label {
@@ -265,50 +494,114 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-}
-
-.stats__item:first-child .stats__item-label {
-    margin-left: 119px;
-}
-
-.stats__item:nth-child(2) .stats__item-label {
-    margin-left: 347px;
-}
-
-.stats__item:last-child .stats__item-label {
-    margin-left: 280px;
-}
-
-.rectangle12 {
-    position: relative;
-    width: 1780px;
-    height: 20px;
-    flex-shrink: 0;
-    background: #95CC44;
-    z-index: 1;
-    margin-top: -30px;
-    margin-left: 140px;
+    margin: 0;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .rectangle13 {
+    /* Thanh xanh đậm (thanh trên, bên trái) */
     position: relative;
-    width: 640px;
-    height: 30px;
-    flex-shrink: 0;
-    background: #009950;
     z-index: 2;
+    /* Nằm trên */
+    height: 30px;
+    background: #009950;
+
+    width: 30%;
+    margin-left: 0;
 }
 
+.rectangle12 {
+    /* Thanh xanh lá nhạt (thanh dưới, full) */
+    position: relative;
+    z-index: 1;
+    /* Nằm dưới */
+    height: 20px;
+    background: #95CC44;
+
+    /* SỬA LỖI: Full-width */
+    width: 100%;
+    margin-left: 0;
+
+    /* SỬA LỖI: Kéo lên đè sau .rectangle13 */
+    /* (Đè 20px, là chiều cao của chính nó) */
+    margin-top: -30px;
+}
+
+
+/* === BẮT ĐẦU CSS RESPONSIVE === */
+
+/* Áp dụng cho màn hình TỪ 768px TRỞ XUỐNG (Tablet & Mobile) */
+@media (max-width: 768px) {
+
+    /* 1. KHỐI THỐNG KÊ (STATS) */
+    .stats {
+        /* Giảm padding trên/dưới cho mobile */
+        padding: 30px 0;
+        margin-top: 40px; /* Giảm khoảng cách trên */
+    }
+
+    /* (Code .stats .container giữ nguyên để nó full-width) */
+
+    /* 2. DANH SÁCH THỐNG KÊ (UL) */
+    .stats .stats__list {
+        /* SỬA LỖI: Chuyển từ ngang (row) -> dọc (column) */
+        flex-direction: column;
+        
+        /* Căn giữa 3 item theo chiều dọc mới */
+        align-items: center;
+        
+        /* Tăng khoảng cách dọc giữa 3 item */
+        gap: 40px; 
+    }
+
+    /* 3. TỪNG ITEM THỐNG KÊ (LI) */
+    .stats__item {
+        /* Đảm bảo item căn giữa */
+        text-align: center;
+        /* (flex-basis: 300px; không cần nữa) */
+    }
+
+    /* 4. CHỮ (SỐ VÀ LABEL) */
+    .stats__item .stats__item-icon .stats__item-number {
+        /* Giảm cỡ chữ số cho mobile */
+        font-size: 48px; 
+    }
+
+    .stats__item-content .stats__item-label {
+        /* Giảm cỡ chữ label cho mobile */
+        font-size: 20px;
+        line-height: 1.4; /* Tăng chiều cao dòng */
+    }
+
+    /* 5. THANH MÀU (RECTANGLES) */
+    .rectangle13 { /* Thanh xanh đậm */
+        height: 20px; /* Giảm chiều cao */
+    }
+
+    .rectangle12 { /* Thanh xanh lá nhạt */
+        height: 15px; /* Giảm chiều cao */
+        margin-top: -15px; /* Điều chỉnh lại cho khớp */
+    }
+}
 /* End Thống kê  */
 
 
 /* Hệ thống sản phẩm */
-.product-system .container {
-    width: 1919.973px;
-    height: 592.824px;
-    flex-shrink: 0;
+.product-system {
+    width: 100%;
     background: url("../images/font-1.png") lightgray 0px 0px / 100% 100% no-repeat;
     padding-top: 47px;
+    padding-bottom: 47px; /* Thêm padding dưới cho cân đối */
+    box-sizing: border-box;
+    overflow-x: hidden; /* Ngăn cuộn ngang */
+}
+
+.product-system .container {
+    width: 100%;
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Tự động căn giữa */
+    padding: 0 15px; /* Thêm padding hai bên cho màn hình nhỏ */
     box-sizing: border-box;
 }
 
@@ -319,27 +612,46 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: 397px;
+    text-align: center; 
+    margin-bottom: 46px;
 }
 
 .product-system__list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 119px;
-    justify-content: center;
-    margin-top: 46px;
+    justify-content: space-between; /* Dàn 3 item ra 2 lề */
+    flex-wrap: nowrap; /* QUAN TRỌNG: Không cho phép xuống hàng */
+    /* overflow-x: auto; */
+    margin: 0;
+    padding: 0 15px;
+    gap: 30px;
 }
 
 .product-system__item {
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center; 
     position: relative;
-    margin-bottom: 159px;
+    margin-bottom: 30px; 
+    flex-basis: 300px; 
+    max-width: 350px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 100%; 
+}
+
+.product-card__image-wrapper img {
+    max-width: 140%;
+    height: auto;
 }
 
 .product-card__title {
+    width: 100%;
     margin-top: -110px;
-    margin-left: -300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -348,14 +660,11 @@
 }
 
 .product-card__title-background {
-    width: 289px;
-    height: 63px;
-    flex-shrink: 0;
+    position: absolute;
+    inset: 0; /* Tương đương top: 0; right: 0; bottom: 0; left: 0; */
     border-radius: 31.5px;
     background: #FFF;
-    order: 2;
-    position: absolute;
-    padding-left: 20px;
+    z-index: 1;
 }
 
 .product-card__title-name {
@@ -365,36 +674,115 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    position: absolute;
-    order: 1;
-
-
-    padding-left: 19px 39px 15px 39px;
-
     position: relative;
-    z-index: 4;
+
+    padding: 15px 39px;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
 }
 
 .rectangle18 {
     position: relative;
-    width: 1699px;
+    z-index: 1; /* Nằm dưới */
     height: 20px;
-    flex-shrink: 0;
     background: #95CC44;
-    z-index: -2;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 26px; /* Giữ nguyên margin-top của bạn */
 }
 
 .rectangle19 {
     position: relative;
-    width: 642px;
+    z-index: 2; /* Nằm trên */
     height: 30px;
-    flex-shrink: 0;
     background: #009950;
-    z-index: -1;
-    margin-top: -20px;
-    margin-left: 1278px;
+
+    width: 30%; 
+    margin-left: auto;
+    margin-top: -30px; 
 }
 
+
+@media (max-width: 992px) {
+    .product-system__title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    .product-system__list {
+        gap: 20px;
+    }
+
+    .product-system__item {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .product-card__image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .product-card__title-name {
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+
+    .rectangle18 {
+        height: 15px;
+    }
+
+    .rectangle19 {
+        height: 25px;
+        width: 50%;
+    }
+}
+
+/* Điều chỉnh cho màn hình điện thoại (<= 768px) */
+@media (max-width: 768px) {
+    .product-system {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .product-system__title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .product-system__item {
+        /* Cho mỗi item chiếm gần hết chiều rộng */
+        flex-basis: 90%; 
+        max-width: 300px; 
+        margin-bottom: 15px;
+    }
+
+    .product-card__image-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .product-card__image-wrapper img {
+        max-width: 50%;
+    }
+    
+    .product-card__title-name {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+
+    .rectangle18 {
+        height: 10px;
+        width: 95%;
+    }
+
+    .rectangle19 {
+        height: 20px;
+        width: 60%;
+        margin-right: 2.5%;
+    }
+}
 /* End Hệ thống sản phẩm */
 
 
@@ -403,6 +791,7 @@
     position: relative;
     padding: 80px 0;
     margin-top: 129px;
+    overflow: hidden; /* Thêm để chứa background */
 }
 
 .digital-ecosystem::before {
@@ -411,27 +800,30 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 558px;
-    height: 882px;
-    flex-shrink: 0;
-    background: url('../images/Group\ \(3\).png') no-repeat center center;
+    width: 30%; /* Chiếm 30% lề trái */
+    height: 100%;
+    
+    background: url('../images/Group (3).png') no-repeat center center;
     background-size: cover;
     z-index: -1;
 }
 
 .digital-ecosystem__layout {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 30px;
+    flex-wrap: wrap; /* Cho phép xuống hàng trên mobile */
+    align-items: center; 
+    gap: 50px;
+    justify-content: center; 
     position: relative;
     z-index: 2;
-
 }
 
 .digital-ecosystem__nav {
-    flex-basis: 45%;
-    flex-shrink: 0;
+  
+    flex: 1 1 500px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
 }
 
 .digital-ecosystem__nav-list {
@@ -439,8 +831,6 @@
     display: flex;
     flex-direction: column;
     gap: 91px;
-    margin-left: 265px;
-    margin-top: 215px;
 }
 
 .ecosystem-nav-card {
@@ -456,16 +846,19 @@
 }
 
 .ecosystem-nav-card__text {
-    color: #FFF;
+    margin-left: -45px;
+    padding-left: 60px; 
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 40px;
+    border-radius: 21px;
+    border: 2px dashed #FFF;
     font-family: "Inter", sans-serif;
     font-size: 30px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    position: relative;
+    display: flex;
+    align-items: center;
     z-index: 1;
-    margin-left: -45px;
-    padding-left: 60px;
 }
 
 .ecosystem-nav-card__icon {
@@ -481,6 +874,25 @@
     justify-content: center;
 }
 
+.ecosystem-nav-card__icon svg {
+    position: absolute;
+    width: 100%; /* 100% của 150px */
+    height: 100%; /* 100% của 150px */
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.ecosystem-nav-card__icon img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 61.008px;
+    height: 75.929px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
 
 .ecosystem-nav-card--green .ecosystem-nav-card__text {
     width: 488px;
@@ -536,86 +948,68 @@
     justify-content: center;
 }
 
-.ecosystem-nav-card__icon svg {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    flex-shrink: 0;
-    z-index: 1;
-}
-
-.ecosystem-nav-card__icon img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 91.008px;
-    height: 75.929px;
-    flex-shrink: 0;
-    object-fit: contain;
-}
 
 .digital-ecosystem__content {
-    width: 745px;
-    height: 503px;
-    flex-shrink: 0;
+    
+    flex: 1 1 500px; 
+    max-width: 700px; 
     border-radius: 20px;
     border: 2px dashed #95CC44;
     background: linear-gradient(180deg, #EBE667 0%, #D4EBC0 100%);
     position: relative;
     box-sizing: border-box;
-    /* Để tạo viền nét đứt */
     text-align: center;
-    margin-left: 95px;
+    padding: 40px;
 }
 
 .digital-ecosystem__content::after {
     content: '';
     position: absolute;
-    top: 74px;
-    left: -48px;
-    right: -12px;
-    bottom: -12px;
-    width: 749px;
-    height: 462px;
-    flex-shrink: 0;
     border-radius: 20px;
     border: 2px dashed #95CC44;
-    z-index: -1;
-}
-
-.digital-ecosystem__content::before {
-    content: '';
-    position: absolute;
-    bottom: -112px;
-    right: -101px;
-    width: 264.43px;
-    height: 260.59px;
-    flex-shrink: 0;
-    background: url('../images/Lá\ 1.png') no-repeat center center;
-    background-size: contain;
-    z-index: 1;
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+    top: 50px;
+    left: -51px;
 }
 
 .content__wrapper {
     position: relative;
-
+    z-index: -2;
 }
 
 .content__wrapper::before {
-    /* ... Thêm 1 cái viền đứt nữa ... */
     content: '';
     position: absolute;
-    width: 745px;
-    height: 428px;
-    transform: rotate(-2.511deg);
-    flex-shrink: 0;
     border-radius: 20px;
     border: 2px dashed #95CC44;
-    bottom: -83px;
-    right: 15px;
-    z-index: -1;
+    z-index: -99;
+
+    width: 100%;
+    height: 117%;
+    top: 37px;
+    left: -65px;
+    transform: rotate(-2.511deg);
+}
+
+/* Lá cây trang trí */
+.digital-ecosystem__content::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    /* (Giữ nguyên code của bạn, vì đây là trang trí) */
+    bottom: -112px;
+    right: -101px;
+    width: 264.43px;
+    height: 260.59px;
+    background: url('../images/Lá 1.png') no-repeat center center;
+    background-size: contain;
+}
+
+.content__wrapper {
+    position: relative;
+    z-index: 2; /* Nổi lên trên các viền đứt */
 }
 
 .digital-ecosystem__description {
@@ -623,17 +1017,16 @@
     text-align: justify;
     font-family: "Inter", sans-serif;
     font-size: 30px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    flex-shrink: 0;
-    padding: 63px 67px 80px 72px;
+    line-height: 1.4; 
+    
+    
+    padding: 0;
+    margin-bottom: 40px; 
 }
-
 .btn.btn--primary {
     display: inline-flex;
-    width: 353px;
-    height: 55px;
+    padding: 14px 28px;
     flex-shrink: 0;
     border-radius: 27.5px;
     background: #F29928;
@@ -854,9 +1247,9 @@
 .registration-layout {
     display: grid;
     /* 2 cột bằng nhau */
-    grid-template-columns: 1fr 1fr; 
-    align-items: center; 
-    gap: 97px; 
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 97px;
 }
 
 .registration-content {
@@ -881,6 +1274,7 @@
     height: 276px;
     flex-shrink: 0;
 }
+
 .registration-content__image-books {
     width: 510px;
     height: 238px;
@@ -928,11 +1322,12 @@
 .registration-form textarea {
     width: 100%;
     padding: 15px;
-    
+
     background-color: #FFFFFF;
     border: 1px solid #DDE1E6;
-    border-radius: 8px; /* Bo góc cho ô input */
-    
+    border-radius: 8px;
+    /* Bo góc cho ô input */
+
     color: #B8B8B8;
     text-align: justify;
     font-family: "Inter", sans-serif;
@@ -940,8 +1335,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    
-    box-sizing: border-box; 
+
+    box-sizing: border-box;
 
 }
 
@@ -967,6 +1362,7 @@
 .btn--full-width:hover {
     background-color: #003E1F;
 }
+
 /* End Đăng ký */
 
 /* End Body */
