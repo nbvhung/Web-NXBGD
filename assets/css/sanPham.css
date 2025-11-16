@@ -1,19 +1,25 @@
 .page-header-container {
-    width: 100%;
+    width: auto; /* Để nó tự co giãn */
     margin-top: 20px;
-    margin-left: 270px;
+    margin-left: 42px;
+    margin-right: 30px; /* THÊM - Để không dính lề phải (bạn có thể đổi số 30px) */
+    box-sizing: border-box; /* THÊM */
 }
 
 .breadcrumbs {
     position: relative;
-    background: #95CC44; /* Màu xanh lá của breadcrumb */
+    background: #95CC44;
     padding: 12px 30px;
-    margin-top: 135px;
-    width: 921px;
-    height: 39px;
+
+    /* SỬA LỖI: Gỡ bỏ width/height cố định */
+    max-width: 921px; /* Giữ độ rộng tối đa */
+    width: 100%;
+    height: auto;
+    
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    box-sizing: border-box; /* Thêm để padding không làm tràn */
 }
 
 .breadcrumbs svg {
@@ -35,7 +41,11 @@
 
 .rectangle12 {
     position: absolute;
-    width: 1280px;
+    
+    /* SỬA LỖI: Cho thanh trang trí full-width */
+    width: 100%; 
+    left: 0; /* Đảm bảo nó căn trái */
+    
     height: 20px;
     flex-shrink: 0;
     background: #009950;
@@ -69,26 +79,40 @@
 }
 
 .search-filter {
-    width: 1380px;
-    height: 98px;
-    flex-shrink: 0;
-    margin-left: 270px;
+    /* SỬA LỖI: Gỡ bỏ width/height, thêm margin-right */
+    width: auto;
+    height: auto;
+    margin-left: 270px; /* GIỮ LẠI */
+    margin-right: 233px;
+    box-sizing: border-box; /* THÊM */
+    
     background: #E7F1D4;
+    padding: 20px;
+    /* XÓA: width: 1380px; */
+    /* XÓA: height: 98px; */
 }
 
 .search-filter__form {
     display: flex;
     gap: 21px;
+    flex-wrap: wrap; /* CHO PHÉP XUỐNG HÀNG TRÊN MOBILE */
+    justify-content: center; /* Căn giữa các item khi xuống hàng */
 }
 
 .search-filter__item {
     display: flex;
     flex-direction: column;
-    margin-top: 21px;
+    
+    /* SỬA LỖI: Cho phép các item co giãn */
+    flex-grow: 1;
+    flex-basis: 190px; /* Độ rộng cơ bản, cho phép 4-5 item trên hàng */
+    min-width: 180px; /* Độ rộng tối thiểu */
+
+    /* XÓA: margin-top: 21px; (Để gap xử lý) */
 }
 
 .search-filter__item:first-child {
-    margin-left: 128px;
+    margin-left: 0; /* XÓA: margin-left: 128px; */
 }
 
 .search-filter__item label {
@@ -104,10 +128,12 @@
 
 .search-filter__item input,
 .search-filter__item select {
-    width: 193px;
-    height: 35px;
+    /* SỬA LỖI: Gỡ bỏ width/height cố định */
+    width: 100%; /* Full-width theo .search-filter__item */
+    height: auto; /* Chiều cao tự động */
+    padding: 10px 15px; /* Dùng padding để tạo chiều cao */
+    
     flex-shrink: 0;
-    padding-left: 21px;
     border-radius: 17.5px;
     background: #FFF;
     color: rgba(0, 0, 0, 0.30);
@@ -139,11 +165,12 @@
 
 .digital-ecosystem {
     position: relative;
-    padding: 80px 0;
+    padding: 80px 15px;
     margin-top: 20px;
-    margin-left: 270px;
+    margin-left: 270px; /* GIỮ LẠI */
+    margin-right: 30px; /* THÊM */
+    box-sizing: border-box; /* THÊM */
 }
-
 .digital-ecosystem::before {
     content: '';
     position: absolute;
@@ -165,12 +192,13 @@
     gap: 30px;
     position: relative;
     z-index: 2;
-
+    justify-content: center;
 }
 
 .digital-ecosystem__nav {
-    flex-basis: 45%;
-    flex-shrink: 0;
+    /* Đặt độ rộng cơ bản cho cột nav */
+    flex: 1 1 45%;
+    min-width: 400px; /* Độ rộng tối thiểu */
 }
 
 .digital-ecosystem__nav-list {
@@ -178,8 +206,8 @@
     display: flex;
     flex-direction: column;
     gap: 66px;
-    margin-left: 255px;
     margin-top: -26px;
+    /* margin-left: 255px; */
 }
 
 .ecosystem-nav-card {
@@ -196,7 +224,7 @@
 .ecosystem-nav-card__text {
     color: #FFF;
     font-family: "Inter", sans-serif;
-    font-size: 30px;
+    /* font-size: 30px; */
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -220,13 +248,21 @@
 }
 
 
-.ecosystem-nav-card--green .ecosystem-nav-card__text {
-    width: 355px;
-    height: 68px;
+/* SỬA LỖI: Gỡ bỏ width/height cố định cho các nút */
+.ecosystem-nav-card--green .ecosystem-nav-card__text,
+.ecosystem-nav-card--yellow .ecosystem-nav-card__text,
+.ecosystem-nav-card--blue .ecosystem-nav-card__text {
+    width: auto; /* Chiều rộng tự động */
+    height: auto; /* Chiều cao tự động */
+    padding: 20px 30px 20px 60px; /* Dùng padding tạo kích thước */
+
+    /* Điều chỉnh lại padding-left do margin-left: -45px; */
+    margin-left: -45px;
+    padding-left: 60px; /* 15px (mong muốn) + 45px (overlap) */
+
     flex-shrink: 0;
     border-radius: 21px;
     border: 2px dashed #FFF;
-    background: #007234;
     color: #FFF;
     font-family: "Inter", sans-serif;
     font-size: 20px;
@@ -238,41 +274,10 @@
     justify-content: center;
 }
 
-.ecosystem-nav-card--yellow .ecosystem-nav-card__text {
-    width: 355px;
-    height: 68px;
-    flex-shrink: 0;
-    border-radius: 21px;
-    border: 2px dashed #FFF;
-    background: #FFEB3D;
-    color: #007234;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.ecosystem-nav-card--blue .ecosystem-nav-card__text {
-    width: 355px;
-    height: 68px;
-    flex-shrink: 0;
-    border-radius: 21px;
-    border: 2px dashed #FFF;
-    background: #00B8F2;
-    color: #F5F5F5;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/* ... các style màu nền ... */
+.ecosystem-nav-card--green .ecosystem-nav-card__text { background: #007234; color: #FFF; }
+.ecosystem-nav-card--yellow .ecosystem-nav-card__text { background: #FFEB3D; color: #007234; }
+.ecosystem-nav-card--blue .ecosystem-nav-card__text { background: #00B8F2; color: #F5F5F5; }
 
 .ecosystem-nav-card__icon svg {
     position: absolute;
@@ -295,8 +300,12 @@
 }
 
 .digital-ecosystem__content {
-    width: 459px;
-    height: 337px;
+    /* Gỡ bỏ width/height cố định */
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    flex: 1 1 400px; /* Cho phép co giãn */
+    
     flex-shrink: 0;
     border-radius: 20px;
     border: 2px dashed #95CC44;
@@ -304,8 +313,10 @@
     position: relative;
     box-sizing: border-box;
     text-align: center;
-    margin-left: 95px;
     margin-bottom: 98px;
+    
+    /* PHỤC HỒI LẠI: Để đẩy cột content sang phải */
+    margin-left: 95px;
 }
 
 .digital-ecosystem__content::after {
@@ -313,13 +324,13 @@
     position: absolute;
     top: -32px;
     left: -33px;
-    bottom: -12px;
-    width: 508px;
-    height: 328px;
+    width: 100%; /* Sửa thành 100% */
+    height: 100%; /* Sửa thành 100% */
     flex-shrink: 0;
     border-radius: 20px;
     border: 2px dashed #95CC44;
     z-index: -1;
+    /* XÓA: width: 508px; height: 328px; bottom, ... */
 }
 
 .digital-ecosystem__content::before {
@@ -332,17 +343,7 @@
 }
 
 .content__wrapper::before {
-    content: '';
-    position: absolute;
-    width: 505.545px;
-    height: 333.253px;
-    transform: rotate(-2.173deg);
-    flex-shrink: 0;
-    border-radius: 20px;
-    border: 2px dashed #95CC44;
-    bottom: -15px;
-    right: -35px;
-    z-index: -1;
+    display: none;
 }
 
 .digital-ecosystem__description {
@@ -352,15 +353,18 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1.4; /* Dùng line-height tương đối */
     flex-shrink: 0;
     padding: 36px 35px 15px 37px;
 }
 
 .btn.btn--primary {
     display: inline-flex;
-    width: 250px;
-    height: 39px;
+    
+    /* SỬA LỖI: Gỡ bỏ width/height cố định */
+    width: auto; /* Chiều rộng tự động */
+    height: auto; /* Chiều cao tự động */
+    
     flex-shrink: 0;
     border-radius: 27.5px;
     background: #F29928;
