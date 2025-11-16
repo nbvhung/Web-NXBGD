@@ -1,7 +1,6 @@
 .page-header-container {
     width: 100%;
     margin-top: 20px;
-    margin-left: 270px;
 
     /* THÊM DÒNG NÀY ĐỂ GIẤU THANH CUỘN NGANG */
     overflow-x: hidden;
@@ -16,22 +15,27 @@
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
-    margin-top: 135px;
+    margin-top: 50px;
 }
 
 .main-column-wrapper {
     min-width: 0;
     display: flex;
     flex-direction: column;
+    flex: 1; /* THÊM: Cho phép cột này co giãn lấp đầy không gian */
 }
 
 .breadcrumbs {
     position: relative;
     background: #95CC44;
     padding: 8px 21px;
-    width: 1023px;
-    height: 39px;
-    flex-shrink: 0;
+    margin-bottom: 20px; /* Thêm khoảng cách với title */
+    
+    /* SỬA LỖI: Gỡ bỏ width/height, thay bằng 100% */
+    width: 100%;
+    height: auto; 
+    box-sizing: border-box; /* Đảm bảo padding không làm tràn */
+
     display: flex;
     align-items: center;
 }
@@ -78,15 +82,15 @@
     padding-top: -10px;
 }
 
-.news-section {
-    width: 1069px;
-}
+
 
 .news-section__list {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: nowrap;
     gap: 27.23px;
+    justify-content: flex-start; /* Căn lề trái */
 }
 
 .news-card {
@@ -94,9 +98,13 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    width: 324.267px;
     height: 100%;
     overflow: hidden;
+    
+    /* SỬA LỖI: Dùng flex-basis và max-width thay vì width cố định */
+    flex: 1 1 300px; /* (grow, shrink, basis) - Cho phép 3 card trên 1 hàng */
+    max-width: 325px; /* Giữ lại kích thước tối đa như thiết kế */
+    /* XÓA: width: 324.267px; */
 }
 
 /* === PHẦN HÌNH ẢNH === */
@@ -105,8 +113,7 @@
     /* Để làm mốc cho .leaf-background-box */
     z-index: 2;
 
-    width: 1069px;
-    padding: 40px;
+    width: 980px;
     box-sizing: border-box;
 }
 
@@ -115,7 +122,7 @@
     background-repeat: no-repeat;
     background-position: bottom left;
     height: 281px;
-    width: 1337px;
+    width: 1250px;
     margin-top: -320px;
     margin-bottom: 44px;
 }
@@ -124,15 +131,20 @@
 .news-card__image-wrapper {
     position: relative;
     background-color: #95CC44;
-    background-image: url("../images/Group\ 4.svg");
+    background-image: url("../images/Group 4.svg");
     background-repeat: no-repeat;
     background-position: top left;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 324.267px;
-    height: 251.892px;
     flex-shrink: 0;
+    
+    /* SỬA LỖI: Dùng 100% width và aspect-ratio (tỷ lệ gốc) */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 324 / 252;
+    /* XÓA: width: 324.267px; */
+    /* XÓA: height: 251.892px; */
 }
 
 .news-card__image {
@@ -181,23 +193,18 @@
     flex-grow: 1;
     /* Tự co giãn lấp đầy phần thừa */
     background: #FFF;
-    width: 324.267px;
-    height: 227.767px;
     flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 15px;
 }
 
 .news-card__title {
-    width: 293.046px;
-    height: 37.606px;
-    flex-shrink: 0;
     color: #303030;
     font-family: "Inter", sans-serif;
     font-size: 15px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
-    padding-top: 18.45px;
-    padding-left: 15.61px;
+    line-height: 1.3;
 }
 
 .news-card__title a {
@@ -211,19 +218,15 @@
 }
 
 .news-card__description {
-    width: 295.175px;
-    height: 102.176px;
-    flex-shrink: 0;
     color: #303030;
     text-align: justify;
     font-family: "Inter", sans-serif;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    padding-top: 30.16px;
-    margin-left: 13.48px;
-    margin-right: 15.61px;
+    line-height: 1.4; /* Dùng line-height tương đối */
+    margin-top: 15px; /* Thêm margin-top thay cho padding-top */
+    flex-grow: 1;
 }
 
 .about__cta2 {
@@ -241,15 +244,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 96.21px;
+    margin: 20px auto 0 auto;
 }
 
 .about__cta2:hover {
     background-color: #003324;
 }
 
+.sidebar {
+    width: 350px; /* Giữ nguyên sidebar width cố định */
+    flex-shrink: 0;
+}
+
 .sidebar-widget {
-    margin-bottom: 30px;
+    margin-bottom: 41px;
     background: #FFF;
 }
 
@@ -257,7 +265,8 @@
     display: flex;
     align-items: center;
     background: #02542D;
-    width: 325px;
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .sidebar-widget__header svg {
@@ -286,7 +295,7 @@
 
 .sidebar-widget__content {
     /* padding: 15px; */
-    width: 325px;
+    width: 100%;
 }
 
 .sidebar-widget__image {
@@ -308,9 +317,6 @@
 }
 
 .sidebar-widget__content p {
-    width: 325px;
-    height: 53px;
-    flex-shrink: 0;
     color: #303030;
     text-align: justify;
     font-family: "Inter", sans-serif;
@@ -319,6 +325,10 @@
     font-weight: 400;
     line-height: normal;
     margin: 0 0 10px 0;
+    
+    /* SỬA LỖI: Gỡ bỏ width/height cố định */
+    width: 100%;
+    height: auto;
 }
 
 /* === Widget Tin tức - Sự kiện (Dạng danh sách) === */
@@ -361,9 +371,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 0;  
     margin: 0;
-    width: 229px;
-    height: 52px;
+    
+    /* SỬA LỖI: Gỡ bỏ width/height cố định */
+    width: auto; /* Tự động co giãn theo flex */
+    height: auto;
     flex-shrink: 0;
 }
 
