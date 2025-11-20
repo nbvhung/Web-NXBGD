@@ -387,7 +387,6 @@ body {
 
     /* Nút "Xem Thêm" trên banner */
     .intro-banner-widget .view-more-btn {
-        /* Reset vị trí */
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
