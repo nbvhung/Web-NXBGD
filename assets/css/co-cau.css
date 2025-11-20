@@ -46,7 +46,7 @@ body {
     content: '';
     position: absolute;
     height: 20px; 
-    width: 100%; 
+    width: 98.6%; 
     background-color: #009950;
     z-index: -2; 
     top: 19px;

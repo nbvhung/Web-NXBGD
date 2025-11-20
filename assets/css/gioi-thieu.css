@@ -32,7 +32,7 @@ body {
     z-index: 2; 
 }
 
-/* Thanh xanh nhạt (lớp trên) */
+/* Thanh xanh nhạt */
 .breadcrumb-bar::before {
     content: '';
     position: absolute;
@@ -44,12 +44,12 @@ body {
     z-index: -1; 
 }
 
-/* Thanh xanh đậm (lớp đế) */
+/* Thanh xanh đậm */
 .breadcrumb-bar::after {
     content: '';
     position: absolute;
     height: 20px; 
-    width: 100%; 
+    width: 98.6%; 
     background-color: #009950;
     z-index: -2; 
     top: 19px;

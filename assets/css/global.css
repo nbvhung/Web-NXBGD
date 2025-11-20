@@ -354,7 +354,6 @@ img {
     
     gap: 30px; 
     justify-content: flex-end;
-    min-height: 45px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -383,14 +382,10 @@ img {
 }
 
 .header__menu {
-    /* Đã XÓA: margin-left, margin-top... */
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-
-    /* THÊM: Cho phép menu chiếm hết không gian thừa ở giữa */
     flex-grow: 1;
+    margin: 15px 45px 0 0;
 }
 
 .menu {
@@ -416,7 +411,7 @@ img {
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 10px 15px; /* Thêm padding cho dễ bấm */
+    padding: 6px 12px;
 
     /* Lấy lại style cũ của <p> */
     color: #303030;
@@ -488,15 +483,15 @@ img {
 .header__actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     flex-shrink: 0; /* Không co lại */
 }
 
 .header__search {
-    /* Đã XÓA: margin-left: 88px; (Dùng gap) */
     position: relative;
     display: flex;
     align-items: center;
+    padding-top: 15px;
 }
 
 
@@ -564,6 +559,7 @@ img {
 .header__lang-switcher {
     position: relative; 
     cursor: pointer;
+    padding-top: 15px;
 }
 
 .lang-switcher__current {
@@ -717,6 +713,7 @@ img {
     .header__menu {
         display: block; /* Đảm bảo menu (nav) hiện ra */
         width: 100%; /* Chiếm 100% chiều rộng */
+        margin: 0;
     }
 
     .menu {
