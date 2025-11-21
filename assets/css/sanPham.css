@@ -360,10 +360,8 @@
 
 .btn.btn--primary {
     display: inline-flex;
-    
-    /* SỬA LỖI: Gỡ bỏ width/height cố định */
-    width: auto; /* Chiều rộng tự động */
-    height: auto; /* Chiều cao tự động */
+    width: auto;
+    height: auto; 
     
     flex-shrink: 0;
     border-radius: 27.5px;
