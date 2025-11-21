@@ -32,7 +32,6 @@ body {
     z-index: 2; 
 }
 
-/* Thanh xanh nhạt */
 .breadcrumb-bar::before {
     content: '';
     position: absolute;
@@ -44,7 +43,6 @@ body {
     z-index: -1; 
 }
 
-/* Thanh xanh đậm */
 .breadcrumb-bar::after {
     content: '';
     position: absolute;
@@ -193,31 +191,28 @@ body {
 }
 
 .content-left {
-    flex-basis: 902px; 
+    flex-basis: 882px; 
     flex-shrink: 0;
     background-color: #E7F1D4;
     border-radius: 5px;
     
-    /* Padding chung T/B/L/R */
-    padding: 35px 42px 43px 67px;
+    padding: 30px 40px 40px 60px;
     box-sizing: border-box;
 }
 
-/* Các khối văn bản bên trong cột trái */
 .text-content p {
     font-size: 20px;
     color: #303030;
-    font-weight: 400; /* Inter-Regular */
+    font-weight: 400; 
     line-height: 26px;
     margin: 0;
+    text-align: justify;
 }
 
-/* Khoảng cách giữa các đoạn trong cùng 1 khối */
 .text-segment p + p {
     margin-top: 26px;
 }
 
-/* Tiêu đề (1. Lịch sử, 2. Định hướng) */
 .text-title {
     font-size: 24px;
     font-weight: 700; 
@@ -229,36 +224,34 @@ body {
 #contact-info {
     margin-bottom: 18px;
 }
-.text-title:nth-of-type(1) { /* Tiêu đề "1. Lịch sử" */
+.text-title:nth-of-type(1) { 
     margin-bottom: 16px;
 }
-.text-segment:nth-of-type(2) { /* Khối "Công ty Cổ phần..." */
+.text-segment:nth-of-type(2) { 
     margin-bottom: 26px;
 }
-.text-segment:nth-of-type(3) { /* Khối "Năm 2018..." */
+.text-segment:nth-of-type(3) { 
     margin-bottom: 29px;
 }
-.text-title:nth-of-type(2) { /* Tiêu đề "2. Định hướng" */
+.text-title:nth-of-type(2) { 
     margin-bottom: 29px;
 }
 #contact-info p + p {
     margin-top: 0; 
 }
 
-/* --- Sidebar (Cột phải) --- */
 .sidebar-right {
     flex-basis: 464px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Khoảng cách giữa 3 ảnh */
+    gap: 31px;
 }
 
 .sidebar-widget {
     margin-bottom: 0;
 }
 
-/* khung ảnh */
 .placeholder-image {
     position: relative;
     width: 100%;
@@ -277,7 +270,6 @@ body {
     display: block; 
 }
 
-/* Đặt chiều cao cố định cho 3 ảnh */
 .placeholder-image.ad-1 {
     height: 573px; 
 }
@@ -288,19 +280,16 @@ body {
     height: 654px; 
 }
 
-/* Style cho 3 nút "XEM THÊM" */
 .sidebar-widget .view-more-btn {
-    /* (Đoạn 5) Kích thước, màu, bo góc */
     width: 180px;
     height: 50px;
     background-color: #02542D;
     border-radius: 25px;
 
-    /* (Đoạn 5) Font */
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     color: white;
-    font-weight: 500; /* Inter-Medium */
+    font-weight: 500; 
     
     border: none;
     cursor: pointer;
@@ -311,11 +300,9 @@ body {
     right: 15px;
 }
 
-/* Responsive Breadcrumb & Page Header */
 @media (max-width: 992px) {
 
     .breadcrumb-bar {
-        /* Reset style desktop */
         position: static;
         left: 0;
         margin-top: 20px;
@@ -334,7 +321,6 @@ body {
     }
 
     .container-page-header {
-        /* Reset style desktop */
         position: static;
         left: 0;
         padding-top: 0;
@@ -342,7 +328,6 @@ body {
     }
     
     .page-subtitle {
-        /* Reset style desktop */
         position: static;
         top: 0;
         font-size: 20px;
@@ -351,48 +336,38 @@ body {
     }
 
     .page-meta-date {
-        /* Reset style desktop */
         position: static;
         margin-top: 10px;
         font-size: 12px;
     }
 }
-
-/* Responsive Banner */
 @media (max-width: 992px) {
 
     .container-banner {
-        /* Xóa margin-bottom lớn trên mobile */
         margin-bottom: 20px;
     }
 
     .intro-banner-widget {
-        /* Xóa left cố định */
         left: 0;
-        /* Thêm container chuẩn */
         max-width: 1390px;
         margin: 0 auto;
         padding: 0 15px;
         box-sizing: border-box;
     }
 
-    /* Đảm bảo ảnh bên trong co dãn */
     .banner-image {
         width: 100%;
-        height: auto; /* Để ảnh tự co theo tỷ lệ */
-        /* Giữ lại tỷ lệ ảnh theo ảnh mobile */
+        height: auto; 
         aspect-ratio: 380 / 173; 
         object-fit: cover;
     }
 
-    /* Nút "Xem Thêm" trên banner */
     .intro-banner-widget .view-more-btn {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 15px; /* Giảm khoảng cách bottom */
+        bottom: 15px;
         
-        /* Giảm kích thước nút */
         width: 120px;
         height: 35px;
         font-size: 16px;
@@ -438,7 +413,6 @@ body {
     }
 }
 
-/* Ẩn các ảnh vừa copy trên Desktop */
 .mobile-only-image {
     display: none;
 }

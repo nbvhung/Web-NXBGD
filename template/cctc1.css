@@ -1,0 +1,173 @@
+/* --- ORGANIZATIONAL CHART STYLES --- */
+.org-chart-container {
+    font-family: 'Inter', sans-serif;
+    width: 921px;
+    height: 502px;
+    background-color: #E7F1D4;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    justify-content: center; /* Căn giữa dọc */
+}
+
+/* Tiêu đề (Đang ẩn) */
+.org-chart-title {
+    display: none;
+}
+
+/* --- CÁC Ô BÊN NGOÀI (BOX) --- */
+.org-box {
+    background: #fff;
+    border: 2px solid #14AE5C;
+    width: 190px;
+    height: 33px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; 
+    color: #009950;   
+    font-size: 10px; 
+    text-transform: uppercase;
+    text-align: center;
+    
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 0 5px;
+
+    /* Thêm khoảng cách dưới vì đã xóa đường kẻ */
+    margin-bottom: 15px; 
+}
+
+/* --- CẤP 2: HĐQT & BAN KIỂM SOÁT --- */
+.org-level-split {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Nhánh Ban Kiểm Soát */
+.org-side-branch {
+    position: absolute;
+    top: 0; 
+    left: 50%; 
+    /* Đẩy sang phải 120px để tách khỏi trục giữa */
+    margin-left: 120px; 
+    display: flex;
+    align-items: center;
+}
+
+/* --- CẤP 3: WRAPPER CÁC KHỐI --- */
+.org-departments-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 83px; /* Khoảng cách 83px như yêu cầu */
+    width: 100%;
+    align-items: flex-start;
+}
+
+.org-dept-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 372px; 
+}
+
+/* Box tiêu đề khối */
+.org-box.dept-title {
+    margin-bottom: 8px; /* Khoảng cách 8px như yêu cầu */
+}
+
+/* --- HỘP NHÓM MÀU XANH (GROUP BOX) --- */
+.org-group-box {
+    background-color: #DCEEC3; 
+    border: 2px solid #A8C988; 
+    box-sizing: border-box;
+    width: 372px;
+    height: 156px;
+    padding: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+/* Grid */
+.org-grid-2x2, 
+.org-grid-2x3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    width: 100%;
+}
+
+/* Ô nhỏ bên trong */
+.org-box-small {
+    background: #fff;
+    border: 2px solid #14AE5C;
+    
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; 
+    color: #009950;   
+    font-size: 10px;  
+    text-transform: uppercase;
+    text-align: center;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%; 
+    height: 33px; 
+    box-sizing: border-box;
+    padding: 2px 5px;
+}
+
+/* --- RESPONSIVE CHO MOBILE --- */
+@media (max-width: 992px) {
+    .org-chart-container {
+        width: 100% !important;   
+        height: auto !important;  
+        padding: 20px 10px;
+        overflow-x: auto;         
+    }
+    
+    @media (max-width: 480px) {
+        .org-chart-container { align-items: stretch; }
+        .org-departments-wrapper { flex-direction: column; gap: 30px; align-items: center; }
+        
+        .org-group-box { 
+            width: 100%; 
+            height: auto; 
+            padding: 20px;
+        } 
+        
+        .org-grid-2x2, .org-grid-2x3 { 
+            grid-template-columns: 1fr; 
+        }
+        
+        .org-box { width: 100%; max-width: 250px; margin-bottom: 10px; }
+        
+        .org-side-branch { 
+            position: static; 
+            margin: 10px 0; 
+            flex-direction: column;
+        }
+        
+        .org-box-small {
+            height: auto;
+            min-height: 40px;
+            padding: 5px;
+        }
+    }
+}

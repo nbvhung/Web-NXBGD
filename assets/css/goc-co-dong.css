@@ -97,65 +97,112 @@ body {
 
 .info-box-widget {
     width: 445px;
+    height: 207px; /* Chiều cao cố định trên PC */
     flex-shrink: 0;
-    
-    position: relative; 
-    
+    position: relative;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: hidden; /* Cắt phần thừa */
+    background-color: #000; /* Màu nền dự phòng */
 }
 
 .info-box-link {
     display: block;
-    position: relative;
-    text-decoration: none;
-}
-
-.info-box-widget .placeholder-image {
-    display: none;
-}
-
-
-.info-box-widget .info-box-image {
     width: 100%;
-    height: 207px; /* Chiều cao cố định */
-    object-fit: cover;
-    display: block;
-    z-index: 1;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
 }
 
-.info-box-arrow {
-    position: absolute;
-    z-index: 2; 
-    top: 94.31px;
-    left: 37.44px;
-    color: #325D3A;
-}
-.placeholder-image::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #777;
-    padding: 20px;
-    font-size: 14px;
-    text-align: center;
-}
-.placeholder-image img {
+/* Ảnh nền (Nằm dưới cùng) */
+.info-box-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    z-index: 1;
+    transition: transform 0.5s ease;
 }
 
-.info-box-widget .placeholder-image {
-    padding-bottom: 46.51%; /* (207 / 445) * 100% */
+/* Hiệu ứng zoom ảnh khi hover */
+.info-box-widget:hover .info-box-bg {
+    transform: scale(1.05);
 }
 
+/* Lớp phủ màu xanh (Hình dáng đặc biệt) */
+.info-box-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 55%; /* Chiếm khoảng 55% chiều rộng */
+    
+    /* Tạo màu gradient xanh */
+    background: linear-gradient(135deg, rgba(80, 167, 69, 0.95) 0%, rgba(46, 125, 50, 0.95) 100%);
+    
+    /* Bo góc dưới bên phải */
+    border-bottom-right-radius: 60px;
+    
+    z-index: 2;
+}
+
+/* Tạo lớp viền mờ thứ 2 (để giống hình mẫu có 2 lớp) */
+.info-box-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Lớp phủ nhẹ */
+    border-bottom-right-radius: 60px;
+    transform: translate(6px, -6px); /* Tạo hiệu ứng lớp xếp chồng */
+    z-index: -1;
+}
+
+/* Phần chứa nội dung (Chữ + Icon) */
+.info-box-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 55%; /* Khớp với overlay */
+    padding: 30px; /* Căn lề trong */
+    box-sizing: border-box;
+    z-index: 3;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Căn giữa dọc */
+    align-items: flex-start; /* Căn trái */
+}
+
+.info-box-title {
+    color: #FFF;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin: 0 0 20px 0; /* Khoảng cách với icon */
+}
+
+.info-box-icon-circle {
+    width: 35px;
+    height: 35px;
+    background-color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* Hover vào box thì mũi tên dịch chuyển */
+.info-box-widget:hover .info-box-icon-circle {
+    transform: translateX(5px);
+}
 /*Chỉnh năm tài liệu*/
 .container-document-filter {
     margin-bottom: 40px; 
@@ -358,15 +405,15 @@ body {
         flex-direction: column;
         padding-left: 15px;
         padding-right: 15px;
-        gap: 10px;
+        gap: 15px; /* Tăng khoảng cách chút */
         margin-bottom: 30px;
     }
+    
     .info-box-widget {
         width: 100%;
-    }
-    .info-box-image {
-        height: auto;
-        aspect-ratio: 445 / 207;
+        /* Cho phép chiều cao tự động theo tỷ lệ */
+        height: auto; 
+        aspect-ratio: 445 / 207; 
     }
 
     /* --- 5. Nội dung (Bộ lọc năm) --- */
@@ -393,5 +440,8 @@ body {
     .document-table th, 
     .document-table td {
         height: 45px;
+    }
+    .info-box-title {
+        font-size: 20px; /* Giảm chữ trên mobile */
     }
 }

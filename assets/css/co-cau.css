@@ -82,7 +82,6 @@ body {
     position: relative;
     margin-top: 20px;
 }
-/* Layout 2 cột */
 .container-content-wrapper {
     max-width: 1390px;
     margin: 0 auto;
@@ -98,17 +97,17 @@ body {
 
 .content-left {
     /* 921px / 1380px (container) ~ 66.7% */
-    flex-basis: 69%; 
+    flex-basis: 68.3%; 
     flex-shrink: 0;
 }
 
 .sidebar-right {
     /* 445px / 1380px (container) ~ 32.2% */
-    flex-basis: 33.3%;
+    flex-basis: 32.9%;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 9px; /* Khoảng cách 2 ảnh */
+    gap: 9px;
 }
 .sidebar-widget {
     margin-bottom: 0;
