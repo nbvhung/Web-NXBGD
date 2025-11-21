@@ -270,9 +270,11 @@ img {
 
 
 
+
+
 /* Header  */
 
-.container {
+.header .container {
     width: 100%;
     
     max-width: 1390px;
@@ -607,11 +609,19 @@ img {
     margin-top: 50px; 
 }
 
+.footer .container {
+    width: 100%;
+    max-width: 1390px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
 .footer__inner {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; 
-    flex-wrap: wrap; 
+    /* justify-content: space-between;
+    align-items: flex-start;  */
+    flex-wrap: nowrap; 
     gap: 30px; 
 }
 
@@ -658,7 +668,7 @@ img {
 /* === BẮT ĐẦU CSS RESPONSIVE === */
 @media (max-width: 992px) {
 
-    .container {
+    .header .container {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -739,6 +749,10 @@ img {
         font-size: 16px;
     }
 
+    .footer__info p {
+        margin: 0;
+    }
+
     .footer__logo .footer__logo-text {
         font-size: 20px;
     }
@@ -746,7 +760,7 @@ img {
 
 
 @media (max-width: 768px) {
-    .container {
+    .header .container {
         padding-left: 35px;
         padding-right: 35px;
     }
