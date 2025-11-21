@@ -5,15 +5,8 @@
 
 .home-slider.swiper {
     width: 100%;
-    /* Sẽ chiếm 100% trình duyệt */
-
-    /* Đã XÓA: margin-top: 108px; 
-       Việc này giúp nó "dán" lên trên */
     margin-top: 0;
-
-    /* Dùng aspect-ratio để ảnh không bị quá cao */
     aspect-ratio: 16 / 7;
-    /* Bạn có thể đổi số 7 này */
     overflow: hidden;
 }
 
@@ -25,17 +18,14 @@
 }
 
 .home-content__image-wrapper {
-    /* Thêm dòng này để dán ảnh tĩnh vào swiper */
     margin-top: 0;
     position: relative;
-    /* Làm mốc cho các thanh */
     z-index: 2;
 }
 
 
 .home-content__anh01 {
     display: block;
-    /* CSS của bạn ở đây đã RẤT TỐT (linh hoạt) */
     max-width: 1477px;
     width: 100%;
     height: auto;
@@ -59,106 +49,70 @@
 
 .rectangle9 {
     position: relative;
-    /* Giữ nó "trong luồng" */
     height: 20px;
     background: #95CC44;
     z-index: 1;
-    /* Nằm dưới thanh xanh đậm */
 
-    /* === KỸ THUẬT TRÀN VIỀN === */
     width: 100vw;
-    /* 100% chiều rộng màn hình */
-
-    /* Tính toán margin-left âm để kéo nó về lề trái */
-    /* *LƯU Ý: Thay 1200px và 15px cho khớp với .container của bạn* */
     margin-left: calc(((1200px / 2) - 50vw) - 15px);
 }
 
-/* 2. THANH XANH ĐẬM (Linh hoạt + Căn phải + Đè lên) */
 .rectangle10 {
     position: relative;
     height: 30px;
     background: #009950;
     z-index: 2;
-    /* Nằm trên thanh xanh lá */
-
-    /* SỬA LỖI: Bỏ width cứng, thay bằng % (responsive) */
-    /* width: 708px; */
     width: 40%;
-    /* Bạn có thể đổi 40% -> 37% hoặc 50% cho vừa ý */
-
-    /* Căn lề phải (dính vào lề phải của .container) */
     margin-left: auto;
     margin-right: -185px;
-
-    /* SỬA LỖI: Kéo nó lên đè HẾT lên thanh nhạt (cao 20px) */
     margin-top: -20px;
 }
 
 @media (max-width: 992px) {
 
     .home-slider.swiper {
-        /* Cho slider cao hơn một chút (từ 16/7 -> 16/9) */
         aspect-ratio: 16 / 9;
     }
 
-    /* * Sửa lỗi tràn viền cho .rectangle9 trên Tablet.
-     * Bạn PHẢI đổi số 960px này cho khớp với max-width
-     * của .container ở breakpoint 992px của bạn.
-     * (Giả sử padding container vẫn là 15px)
-     */
     .rectangle9 {
         margin-left: calc(((960px / 2) - 50vw) - 15px);
     }
 }
 
 
-/* === 2. Tinh Chỉnh cho MOBILE (Dưới 768px) === */
 @media (max-width: 768px) {
 
     .container {
-        /* Xóa lề trái/phải để mọi thứ bên trong nó
-           tự động "full màn" */
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 35px;
+        padding-right: 35px;
     }
 
-    /* 1. Slider (Swiper) */
     .home-slider.swiper {
         aspect-ratio: 4 / 5;
         margin-top: 0;
     }
 
-    /* Ẩn nút next/prev, người dùng sẽ quẹt tay */
     .home-slider .swiper-button-prev,
     .home-slider .swiper-button-next {
         display: none;
     }
 
     .home-content__image-wrapper {
-        /* (Nó đã có width: 100%, 
-           nên nó cũng sẽ tự động full màn) */
-
-        /* Xóa margin âm nếu bạn đã thêm từ trước */
         margin-left: 0;
         margin-right: 0;
     }
 
     .rectangle9 {
-        /* Bỏ kỹ thuật 100vw và calc() */
         width: 100%;
         margin-left: 0;
     }
 
-    /* 5. Thanh xanh đậm */
     .rectangle10 {
         width: 60%;
-        /* Giữ 60% (so với 100% màn hình) */
         height: 25px;
         margin-top: -18px;
         margin-left: auto;
         margin-right: 0;
-        /* Dính vào lề phải của màn hình */
     }
 }
 
@@ -298,20 +252,13 @@
 }
 
 /* === BẮT ĐẦU CSS RESPONSIVE === */
-
-/* Áp dụng cho màn hình TỪ 992px TRỞ XUỐNG (Tablet) */
 @media (max-width: 992px) {
 
-    /* 1. Sắp xếp lại lưới */
     .about__grid {
-        /* Chuyển 2 cột (PC) -> 1 cột (Mobile) */
         flex-direction: column;
-
-        /* Giảm khoảng cách giữa các khối */
         gap: 20px;
     }
 
-    /* 2. Cho các cột chiếm 100% chiều rộng */
     .about__grid .about__grid-1,
     .about__grid .about__grid-2 {
         flex-basis: 100%;
@@ -983,7 +930,6 @@
     content: '';
     position: absolute;
     z-index: 1;
-    /* (Giữ nguyên code của bạn, vì đây là trang trí) */
     bottom: -112px;
     right: -101px;
     width: 264.43px;
@@ -1040,38 +986,34 @@
         margin-top: 80px;
     }
 
-    /* Các cột sẽ tự xuống hàng vì đã có flex-wrap: wrap */
     .digital-ecosystem__layout {
-        gap: 40px; /* Giảm khoảng cách giữa nav và content */
-        /* Căn giữa 2 cột khi chúng xếp chồng */
+        gap: 40px; 
         justify-content: center;
     }
 
-    /* Ép cả 2 cột chiếm 100% chiều rộng */
     .digital-ecosystem__nav,
     .digital-ecosystem__content {
         flex-basis: 100%;
-        max-width: 700px; /* Giới hạn độ rộng để dễ đọc */
+        max-width: 700px; 
     }
 
     .digital-ecosystem__nav-list {
-        gap: 40px; /* Giảm khoảng cách các nút */
+        gap: 40px; 
     }
 
     .ecosystem-nav-card__text {
-        font-size: 26px; /* Giảm cỡ chữ nút */
+        font-size: 26px; 
     }
 
-    /* QUAN TRỌNG: Gỡ bỏ width/height cố định */
     .ecosystem-nav-card--green .ecosystem-nav-card__text,
     .ecosystem-nav-card--yellow .ecosystem-nav-card__text,
     .ecosystem-nav-card--blue .ecosystem-nav-card__text {
         width: auto; /* Cho phép co giãn */
-        height: auto; /* Chiều cao tự động theo padding */
+        height: auto; 
     }
 
     .digital-ecosystem__description {
-        font-size: 24px; /* Giảm cỡ chữ mô tả */
+        font-size: 24px; 
     }
 }
 
@@ -1079,11 +1021,10 @@
 /* 2. Mobile (<= 768px) */
 @media (max-width: 768px) {
     .digital-ecosystem {
-        padding: 40px 15px; /* Thêm padding 2 bên */
+        padding: 40px 15px; 
         margin-top: 50px;
     }
 
-    /* Ẩn hình nền 30% bên trái đi */
     .digital-ecosystem::before {
         display: none;
     }
@@ -1218,7 +1159,6 @@
 }
 
 .news-card__date-wrapper {
-    /* CHÌA KHÓA: "CÙNG HÀNG" (Xếp icon và chữ nằm ngang) */
     display: flex;
     align-items: center;
     position: absolute;
@@ -1381,50 +1321,39 @@
         margin-bottom: 30px;
     }
 
-    /* 1. Tạo "khung" cho slider */
     .news-slider-wrapper {
         position: relative;
-        overflow: hidden; /* Ẩn các slide 2 bên */
+        overflow: hidden; 
     }
 
-    /* 2. Biến list thành "track" cuộn ngang */
     .news-section__list {
         display: flex;
-        flex-wrap: nowrap; /* Ép các slide nằm trên 1 hàng */
-        gap: 0; /* JS sẽ xử lý khoảng cách, hoặc dùng padding */
+        flex-wrap: nowrap;
+        gap: 0; 
         
-        /* Giả sử bạn có 3 slide. 
-           JS của bạn sẽ thay đổi 'transform' 
-           ví dụ: transform: translateX(-100%); 
-        */
     }
 
-    /* 3. Biến mỗi item thành 1 slide */
     .news-section__item {
-        width: 100%; /* Mỗi slide chiếm 100% wrapper */
-        flex-shrink: 0; /* Ngăn slide bị co lại */
+        width: 100%; 
+        flex-shrink: 0; 
     }
 
-    /* 4. Style lại card giống ảnh mobile */
     .news-card {
-        max-width: 100%; /* Bỏ max-width 457px */
-        /* Giả sử ảnh mobile có nền xanh lá nhạt */
-        background-color: #F0F5E7; /* (Bạn đổi màu này cho đúng) */
+        max-width: 100%; 
+        background-color: #F0F5E7; 
     }
 
     .news-card__image-wrapper {
-        /* Đổi nền cho giống ảnh */
         background-color: #95CC44; 
     }
 
     .news-card__image {
-        margin-top: 0; /* Bỏ margin-top âm */
+        margin-top: 0; 
     }
 
     .news-card__content {
         padding: 25px;
-        background: #F0F5E7; /* (Nền xanh lá nhạt) */
-        /* Căn giữa mọi thứ */
+        background: #F0F5E7;
         align-items: center;
     }
     
@@ -1436,7 +1365,7 @@
     .news-card__description {
         font-size: 16px;
         text-align: center;
-        flex-grow: 0; /* Bỏ flex-grow */
+        flex-grow: 0; 
         margin-top: 15px;
     }
 
@@ -1444,7 +1373,6 @@
         display: block;
     }
 
-    /* CSS cho slider (bạn đã có) */
     .news-slider-wrapper {
         position: relative;
         overflow: hidden; 
@@ -1454,16 +1382,12 @@
         display: flex;
         flex-wrap: nowrap;
         gap: 0;
-        /* Thêm transition để slide mượt */
         transition: transform 0.4s ease-in-out;
     }
 
     .news-section__item {
         width: 100%;
         flex-shrink: 0;
-        /* Thêm padding 2 bên nếu cần */
-        /* padding: 0 10px; */
-        /* box-sizing: border-box; */
     }
 }
 
@@ -1475,14 +1399,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 30px; /* Giảm gap */
-    padding: 0 30px; /* Thêm padding thay cho margin */
+    gap: 30px;
+    padding: 0 30px; 
 }
 
 .registration-content {
     margin-top: 180px;
     width: 100%;
-    /* XÓA: margin-left: 181px; */
 }
 
 .registration-content__title {
@@ -1509,7 +1432,7 @@
     max-width: 510px;
     aspect-ratio: 510 / 238;
     display: block;
-    margin: -50px auto 46px auto; /* Căn giữa */
+    margin: -50px auto 46px auto; 
     position: relative;
     z-index: 2;
 }
@@ -1521,22 +1444,18 @@
     background: #00AA4F;
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    
-    /* SỬA LỖI: Bỏ width/height/margin cố định */
     width: 100%;
     max-width: 489px;
     height: auto;
-    margin: 59px auto 0 auto; /* Căn giữa */
+    margin: 59px auto 0 auto;
 }
 
-/* HÀNG 2 CỘT (HỌ TÊN & SĐT) */
 .form-row--two-cols {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-/* Khoảng cách giữa các hàng */
 .form-row {
     margin-bottom: 20px;
 }
@@ -1553,7 +1472,6 @@
     background-color: #FFFFFF;
     border: 1px solid #DDE1E6;
     border-radius: 8px;
-    /* Bo góc cho ô input */
 
     color: #B8B8B8;
     text-align: justify;
@@ -1567,7 +1485,6 @@
 
 }
 
-/* === NÚT SUBMIT === */
 .btn--full-width {
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -1592,24 +1509,22 @@
 }
 @media (max-width: 992px) {
     .registration-layout {
-        /* Chuyển thành 1 cột */
         grid-template-columns: 1fr;
-        gap: 40px; /* Giảm khoảng cách */
-        padding: 0 30px; /* Thêm padding 2 bên */
+        gap: 40px; 
+        padding: 0 30px; 
     }
 
     .registration-content {
-        margin-top: 60px; /* Giảm margin-top */
-        margin-left: 0; /* Xóa margin-left cố định */
-        /* Căn giữa nội dung cột này */
+        margin-top: 60px; 
+        margin-left: 0; 
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .registration-form-wrapper {
-        margin-top: 0; /* Xóa margin-top */
-        margin-left: auto; /* Căn giữa form */
+        margin-top: 0; 
+        margin-left: auto; 
         margin-right: auto;
     }
 
@@ -1619,57 +1534,48 @@
     }
 }
 
-/* 2. Mobile (<= 768px) - Giống hình bạn gửi */
 @media (max-width: 768px) {
     .registration-layout {
         gap: 30px;
-        padding: 0; /* Bỏ padding để form full-width */
+        padding: 0; 
     }
 
     .registration-content {
         margin-top: 30px;
-        padding: 0 15px; /* Thêm padding 2 bên cho text/ảnh */
+        padding: 0 15px; 
     }
 
     .registration-content__title {
-        font-size: 28px; /* Giảm font chữ tiêu đề */
+        font-size: 28px; 
     }
-
-    /* ẨN ẢNH CUỐN SÁCH */
     .registration-content__image-books {
-        /* XÓA: display: none; */
-        
-        /* Vẫn giữ responsive */
         width: 100%;
         height: auto;
-        max-width: 201px; /* Thu nhỏ kích thước tối đa cho mobile */
+        max-width: 201px; 
         
-        /* ĐIỀU CHỈNH VỊ TRÍ */
         display: block;
         position: relative;
         z-index: 2;
-        margin-left: auto;   /* Đẩy sang phải */
-        margin-right: 10%;    /* Tạo khoảng cách lề phải một chút */
-        margin-top: -38px;/* Kéo lên (điều chỉnh số px này cho khớp) */
+        margin-left: auto;   
+        margin-right: 10%;    
+        margin-top: -38px;
         margin-bottom: 30px;
     }
-    /* FORM FULL-WIDTH */
     .registration-form-wrapper {
-        width: 100%; /* Full-width */
-        max-width: 100%; /* Ghi đè max-width cũ */
+        width: 100%; 
+        max-width: 100%;
         margin-top: 0;
-        border-radius: 20px 20px 0 0; /* Bo góc chỉ 2 cạnh trên */
-        padding: 40px 20px; /* Thêm padding 2 bên */
+        border-radius: 20px 20px 0 0; 
+        padding: 40px 20px; 
     }
 
-    /* STACK 2 CỘT HỌ VÀ TÊN / SĐT */
     .form-row--two-cols {
         grid-template-columns: 1fr;
-        gap: 20px; /* Giữ gap dọc */
+        gap: 20px; 
     }
 
     .btn--full-width {
-        margin-top: 30px; /* Giảm margin-top của nút */
+        margin-top: 30px; 
     }
 }
 
