@@ -655,7 +655,7 @@
 
 .rectangle18 {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     height: 20px;
     background: #95CC44;
     width: 100%;
@@ -664,7 +664,7 @@
 
 .rectangle19 {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     height: 30px;
     background: #009950;
     width: 30%; 
@@ -732,25 +732,25 @@
 /* Hệ sinh thái */
 .digital-ecosystem {
     position: relative;
-    padding: 80px 0;
+    padding: 80px 15px;
+    margin-top: 20px;
+    box-sizing: border-box; 
 }
 
 .digital-ecosystem__bg-image {
     position: absolute;
     top: -142px;
     left: 0;
-    height: 119%;
+    height: 134%;
     width: 35%; 
     max-width: 564px;
     object-fit: cover; 
     object-position: left center; 
-    z-index: 1; 
+    z-index: 0; 
 }
 
 .digital-ecosystem .container {
-    width: 100%;
-    max-width: 1950px;
-    /* margin-left: auto; */
+    width: 69%;
     margin-right: 260px;
     padding-left: 15px;
     padding-right: 15px;
@@ -759,27 +759,25 @@
 
 .digital-ecosystem__layout {
     display: flex;
-    flex-wrap: wrap; /* Cho phép xuống hàng trên mobile */
-    align-items: center; 
-    gap: 50px;
-    justify-content: center; 
-    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 127px;
     z-index: 2;
+    justify-content: space-between; 
 }
 
 .digital-ecosystem__nav {
-  
-    flex: 1 1 500px;
-    max-width: 1000;
-    display: flex;
-    justify-content: center;
+    flex: 1 1 400px; 
+    min-width: 300px;
 }
 
 .digital-ecosystem__nav-list {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 91px;
+    gap: 56px;
+    margin-top: -40px;
+    margin-left: 39px;
 }
 
 .ecosystem-nav-card {
@@ -795,19 +793,14 @@
 }
 
 .ecosystem-nav-card__text {
-    margin-left: -45px;
-    padding-left: 60px; 
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-right: 40px;
+    width: auto;
+    /* margin-left: -45px; */
+    padding: 15px 30px 15px 60px;
     border-radius: 21px;
-    border: 2px dashed #FFF;
-    font-family: "Inter", sans-serif;
-    font-size: 30px;
+    font-size: 20px; 
     font-weight: 700;
     display: flex;
     align-items: center;
-    z-index: 1;
 }
 
 .ecosystem-nav-card__icon {
@@ -825,10 +818,10 @@
 
 .ecosystem-nav-card__icon svg {
     position: absolute;
-    width: 100%; /* 100% của 150px */
-    height: 100%; /* 100% của 150px */
+    width: 109px;
+    height: 109px;
     flex-shrink: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 .ecosystem-nav-card__icon img {
@@ -837,110 +830,90 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 61.008px;
-    height: 75.929px;
+    width: 66.24px;
+    height: 55.265px;
     flex-shrink: 0;
     object-fit: contain;
 }
 
-.ecosystem-nav-card--green .ecosystem-nav-card__text {
-    width: 488px;
-    height: 94px;
+.ecosystem-nav-card--green .ecosystem-nav-card__text,
+.ecosystem-nav-card--yellow .ecosystem-nav-card__text,
+.ecosystem-nav-card--blue .ecosystem-nav-card__text {
+    width: 90%; 
+    height: auto;
+    padding: 20px 30px 20px 60px; 
+    margin-left: -45px;
+    padding-left: 60px;
     flex-shrink: 0;
     border-radius: 21px;
-    border: 2px dashed #FFF;
-    background: #007234;
     color: #FFF;
     font-family: "Inter", sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
-.ecosystem-nav-card--yellow .ecosystem-nav-card__text {
-    width: 488px;
-    height: 94px;
-    flex-shrink: 0;
-    border-radius: 21px;
-    border: 2px dashed #FFF;
-    background: #FFEB3D;
-    color: #007234;
-    font-family: "Inter", sans-serif;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/* ... các style màu nền ... */
+.ecosystem-nav-card--green .ecosystem-nav-card__text { background: #007234; color: #FFF; }
+.ecosystem-nav-card--yellow .ecosystem-nav-card__text { background: #FFEB3D; color: #007234; }
+.ecosystem-nav-card--blue .ecosystem-nav-card__text { background: #00B8F2; color: #F5F5F5; }
 
-.ecosystem-nav-card--blue .ecosystem-nav-card__text {
-    width: 488px;
-    height: 94px;
-    flex-shrink: 0;
-    border-radius: 21px;
-    border: 2px dashed #FFF;
-    background: #00B8F2;
-    color: #F5F5F5;
-    font-family: "Inter", sans-serif;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 
 .digital-ecosystem__content {
-    
-    flex: 1 1 500px; 
-    max-width: 700px; 
+    flex: 1 1 45%; 
+    max-width: 541px;   
+    margin-right: 0; 
+    margin-left: auto;
     border-radius: 20px;
     border: 2px dashed #95CC44;
     background: linear-gradient(180deg, #EBE667 0%, #D4EBC0 100%);
+    
     position: relative;
     box-sizing: border-box;
     text-align: center;
     padding: 40px;
+    margin-bottom: 40px; 
+    margin-top: 20px;
+    /* z-index: 3; */
     
 }
 
 .digital-ecosystem__content::after {
     content: '';
     position: absolute;
+    top: 40px;
+    left: -44px;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     border: 2px dashed #95CC44;
     z-index: -1;
-    width: 100%;
-    height: 100%;
-    top: 50px;
-    left: -51px;
+    pointer-events: none;
 }
 
 .content__wrapper {
     position: relative;
-    z-index: -2;
+    z-index: 2;
 }
 
 .content__wrapper::before {
     content: '';
     position: absolute;
+    z-index: -2; 
+    top: 110px;
+    left: -59px;
+    width: 116%;
+    height: 100%;
     border-radius: 20px;
     border: 2px dashed #95CC44;
-    z-index: -99;
-
-    width: 100%;
-    height: 117%;
-    top: 37px;
-    left: -65px;
     transform: rotate(-2.511deg);
+    background: transparent; 
 }
 
 /* Lá cây trang trí */
@@ -964,14 +937,10 @@
 .digital-ecosystem__description {
     color: #303030;
     text-align: justify;
-    font-family: "Inter", sans-serif;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 1.4; 
-    
-    
-    padding: 0;
-    margin-bottom: 40px; 
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0; 
 }
 .btn.btn--primary {
     display: inline-flex;
@@ -1000,119 +969,106 @@
 
 @media (max-width: 992px) {
     .digital-ecosystem {
-        padding: 60px 0;
-        margin-top: 80px;
+        margin-top: 0;
+        padding: 40px 15px;
+    }
+    
+    .digital-ecosystem .container {
+        width: 100%;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .digital-ecosystem__layout {
-        gap: 40px; 
+        gap: 50px;
         justify-content: center;
+        flex-direction: column;
     }
 
-    .digital-ecosystem__nav,
-    .digital-ecosystem__content {
-        flex-basis: 100%;
-        max-width: 700px; 
+    .digital-ecosystem__nav {
+        width: 81%;
+        min-width: auto;
+        flex: auto;
     }
 
     .digital-ecosystem__nav-list {
-        gap: 40px; 
+        margin-top: 0; 
+        margin-left: 0;
+        align-items: center; 
+        gap: 30px;
+    }
+
+    .ecosystem-nav-card {
+        width: 100%;
+        max-width: 450px; 
+        justify-content: center;
     }
 
     .ecosystem-nav-card__text {
-        font-size: 26px; 
+        font-size: 18px; 
+        padding-top: 15px;
+        padding-bottom: 15px;
+        
     }
 
-    .ecosystem-nav-card--green .ecosystem-nav-card__text,
-    .ecosystem-nav-card--yellow .ecosystem-nav-card__text,
-    .ecosystem-nav-card--blue .ecosystem-nav-card__text {
-        width: auto; /* Cho phép co giãn */
-        height: auto; 
+    .digital-ecosystem__content {
+        width: 100%;
+        max-width: 100%; 
+        margin-left: 0; 
+        margin-top: 0;
+        padding: 30px 20px;
     }
 
     .digital-ecosystem__description {
-        font-size: 24px; 
+        font-size: 16px; 
+        text-align: justify;
+    }
+
+    .digital-ecosystem__content::after {
+        width: 100%; 
+        left: 10px; 
+        top: 10px;
+    }
+
+    .content__wrapper::before {
+        width: 100%;
+        left: -5px;
+        top: -5px;
+        transform: rotate(-1deg); 
+    }
+
+    .digital-ecosystem__content::before {
+        width: 150px;
+        height: 150px;
+        bottom: -40px;
+        right: -20px;
+        opacity: 0.8;
+    }
+
+    .digital-ecosystem__bg-image {
+        width: 65%;
+        max-width: none;
+        height: 50%;
+        top: 0;
     }
 }
 
 
-/* 2. Mobile (<= 768px) */
 @media (max-width: 768px) {
-    .digital-ecosystem {
-        padding: 40px 15px; 
-        margin-top: 50px;
-    }
-
-    .digital-ecosystem__bg-image {
-        position: absolute;
-        top: -41px;
-        left: 0;
-        height: 52%;
-        width: 61%;
-        max-width: 564px;
-        object-fit: cover;
-        object-position: left center;
-        z-index: 1;
-    }
-    
-    .digital-ecosystem__content::after,
-    .content__wrapper::before {
-        display: none;
-    }
-
-    .digital-ecosystem__layout {
-        position: relative;
-        z-index: 2; 
-    }
-
-    .digital-ecosystem__layout {
-        gap: 30px;
-    }
-
-    .digital-ecosystem__nav-list {
-        gap: 25px;
-    }
-
     .ecosystem-nav-card__icon {
-        width: 70px; /* Thu nhỏ icon */
+        width: 70px;
         height: 70px;
     }
-
+    
     .ecosystem-nav-card__text {
-        font-size: 18px; /* Giảm font chữ nút */
-        margin-left: -35px; /* Giảm overlap */
-        padding-left: 50px; /* Giảm padding trái */
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-right: 20px;
-    }
-
-    /* Ghi đè lại font-size bị hard-code */
-    .ecosystem-nav-card--green .ecosystem-nav-card__text,
-    .ecosystem-nav-card--yellow .ecosystem-nav-card__text,
-    .ecosystem-nav-card--blue .ecosystem-nav-card__text {
-        font-size: 18px;
-    }
-
-    .digital-ecosystem__content {
-        padding: 25px; 
-        max-width: 100%; 
-    }
-
-    .digital-ecosystem__content::after,
-    .content__wrapper::before,
-    .digital-ecosystem__content::before {
-        display: none;
-    }
-
-    .digital-ecosystem__description {
         font-size: 16px;
-        text-align: left; 
-        margin-bottom: 30px;
+        padding-left: 80px; 
+        margin-left: -35px;
     }
-
+    
     .btn.btn--primary {
-        font-size: 16px; 
+        font-size: 16px;
         padding: 12px 24px;
     }
 }
