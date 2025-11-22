@@ -1,8 +1,6 @@
 .page-header-container {
     width: 100%;
     margin-top: 20px;
-
-    /* THÊM DÒNG NÀY ĐỂ GIẤU THANH CUỘN NGANG */
     overflow-x: hidden;
 }
 
@@ -22,20 +20,17 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    flex: 1; /* THÊM: Cho phép cột này co giãn lấp đầy không gian */
+    flex: 1; 
 }
 
 .breadcrumbs {
     position: relative;
     background: #95CC44;
     padding: 8px 21px;
-    margin-bottom: 20px; /* Thêm khoảng cách với title */
-    
-    /* SỬA LỖI: Gỡ bỏ width/height, thay bằng 100% */
+    margin-bottom: 20px; 
     width: 100%;
     height: auto; 
-    box-sizing: border-box; /* Đảm bảo padding không làm tràn */
-
+    box-sizing: border-box; 
     display: flex;
     align-items: center;
 }
@@ -79,10 +74,8 @@
     font-style: italic;
     font-weight: 300;
     line-height: normal;
-    padding-top: -10px;
+    margin-top: -10px; /* Đã sửa từ padding-top (sai) thành margin-top */
 }
-
-
 
 .news-section__list {
     padding: 0;
@@ -90,7 +83,7 @@
     display: flex;
     flex-wrap: nowrap;
     gap: 27.23px;
-    justify-content: flex-start; /* Căn lề trái */
+    justify-content: flex-start; 
 }
 
 .news-card {
@@ -100,20 +93,15 @@
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    
-    /* SỬA LỖI: Dùng flex-basis và max-width thay vì width cố định */
-    flex: 1 1 300px; /* (grow, shrink, basis) - Cho phép 3 card trên 1 hàng */
-    max-width: 325px; /* Giữ lại kích thước tối đa như thiết kế */
-    /* XÓA: width: 324.267px; */
+    flex: 1 1 300px; 
+    max-width: 325px; 
 }
 
 /* === PHẦN HÌNH ẢNH === */
 .news-section {
     position: relative;
-    /* Để làm mốc cho .leaf-background-box */
     z-index: 2;
-
-    width: 980px;
+    width: 100%; /* Đã sửa từ 980px thành 100% để không bị vỡ khung */
     box-sizing: border-box;
 }
 
@@ -121,12 +109,17 @@
     background-image: url('../images/Group (7).png');
     background-repeat: no-repeat;
     background-position: bottom left;
-    height: 281px;
-    width: 1250px;
-    margin-top: -320px;
+    background-size: contain; 
+    max-width: 1249px; 
+    height: 435px;
+    aspect-ratio: 1250 / 281; 
+    margin-top: -25%; 
     margin-bottom: 44px;
+    margin-right: auto;
+    pointer-events: none; 
+    position: relative;
+    z-index: 0; 
 }
-
 
 .news-card__image-wrapper {
     position: relative;
@@ -138,13 +131,9 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    
-    /* SỬA LỖI: Dùng 100% width và aspect-ratio (tỷ lệ gốc) */
     width: 100%;
     height: auto;
     aspect-ratio: 324 / 252;
-    /* XÓA: width: 324.267px; */
-    /* XÓA: height: 251.892px; */
 }
 
 .news-card__image {
@@ -158,7 +147,6 @@
 }
 
 .news-card__date-wrapper {
-    /* CHÌA KHÓA: "CÙNG HÀNG" (Xếp icon và chữ nằm ngang) */
     display: flex;
     align-items: center;
     position: absolute;
@@ -191,7 +179,6 @@
     justify-content: center;
     flex-direction: column;
     flex-grow: 1;
-    /* Tự co giãn lấp đầy phần thừa */
     background: #FFF;
     flex-shrink: 0;
     box-sizing: border-box;
@@ -224,8 +211,8 @@
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.4; /* Dùng line-height tương đối */
-    margin-top: 15px; /* Thêm margin-top thay cho padding-top */
+    line-height: 1.4; 
+    margin-top: 15px; 
     flex-grow: 1;
 }
 
@@ -249,11 +236,6 @@
 
 .about__cta2:hover {
     background-color: #003324;
-}
-
-.sidebar {
-    width: 350px; /* Giữ nguyên sidebar width cố định */
-    flex-shrink: 0;
 }
 
 .sidebar-widget {
@@ -292,9 +274,7 @@
     gap: 8px;
 }
 
-
 .sidebar-widget__content {
-    /* padding: 15px; */
     width: 100%;
 }
 
@@ -325,8 +305,6 @@
     font-weight: 400;
     line-height: normal;
     margin: 0 0 10px 0;
-    
-    /* SỬA LỖI: Gỡ bỏ width/height cố định */
     width: 100%;
     height: auto;
 }
@@ -340,7 +318,6 @@
     margin-top: 19px;
 }
 
-/* Xóa margin của item cuối */
 .sidebar-snippet:last-child {
     margin-bottom: 0;
     border-bottom: none;
@@ -372,10 +349,7 @@
     font-weight: 400;
     line-height: normal;
     margin: 0;  
-    margin: 0;
-    
-    /* SỬA LỖI: Gỡ bỏ width/height cố định */
-    width: auto; /* Tự động co giãn theo flex */
+    width: auto; 
     height: auto;
     flex-shrink: 0;
 }
@@ -399,4 +373,91 @@
     flex-shrink: 0;
     background: #95CC44;
     margin-top: 4px;
+}
+
+@media (max-width: 992px) {
+    .main-layout {
+        flex-direction: column; /* Sidebar rớt xuống dưới nội dung chính */
+        gap: 40px;
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar chiếm full màn hình */
+    }
+    
+    /* Tùy chọn: Nếu muốn Sidebar widget chia 2 cột trên tablet */
+    .sidebar-widget-container {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .news-section__list {
+        flex-wrap: wrap; /* Cho phép tin tức xuống dòng */
+    }
+    
+    .news-card {
+        max-width: 100%; /* Card tin tức dãn ra */
+    }
+    
+    /* Reset lại cái lá để ko bị vỡ layout */
+    .leaf-background-box {
+        height: auto; /* Bỏ height cứng */
+        margin-top: -100px; /* Chỉnh lại vị trí */
+        width: 100%;
+    }
+}
+
+/* Mobile (Dưới 768px) */
+@media (max-width: 768px) {
+    .main-layout {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    /* 1. Xử lý tin tức: Xếp chồng dọc */
+    .news-section__list {
+        display: flex;
+        flex-direction: column; /* Xếp dọc */
+        gap: 20px;
+    }
+
+    .news-section__item {
+        width: 100%;
+    }
+
+    .news-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 2. Xử lý cái lá (Quan trọng) */
+    .leaf-background-box {
+        height: auto; /* Bắt buộc auto để ko thành hình chữ nhật đứng */
+        width: 100%;
+        margin-top: -50px; /* Đẩy lên ít hơn */
+        margin-bottom: 20px;
+    }
+
+    /* 3. Breadcrumbs nhỏ lại */
+    .breadcrumbs {
+        padding: 10px;
+    }
+    .breadcrumbs__link {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    
+    .sidebar-snippet {
+        flex-direction: row; /* Giữ nguyên nằm ngang */
+        align-items: flex-start;
+    }
+    
+    .sidebar-snippet__image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .sidebar-widget__title {
+        font-size: 18px;
+    }
 }
